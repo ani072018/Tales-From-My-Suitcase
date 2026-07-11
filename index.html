@@ -23,20 +23,22 @@
     --gold:#c98a2c;
     --teal:#3f6e64;
     --line: rgba(60,42,30,0.14);
+    --card-bg:#fffaf1;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
     margin:0;
-    background:
+    background-image:
       radial-gradient(1200px 600px at 90% -10%, rgba(200,90,46,0.10), transparent 60%),
-      radial-gradient(1000px 500px at -10% 100%, rgba(63,110,100,0.10), transparent 60%),
-      var(--paper);
+      radial-gradient(1000px 500px at -10% 100%, rgba(63,110,100,0.10), transparent 60%);
+    background-color:var(--paper);
     color:var(--ink);
     font-family:'Source Sans 3', sans-serif;
     -webkit-font-smoothing:antialiased;
+    transition:background-color 2.5s ease, color 2.5s ease;
   }
-  h1,h2,h3,.display{ font-family:'Fraunces', serif; letter-spacing:-0.01em; }
+  h1,h2,h3,.display{ font-family:'Fraunces', serif; letter-spacing:-0.01em; transition:color 2.5s ease; }
 
   body::before{
     content:"";
@@ -47,6 +49,15 @@
     opacity:0.035;
     mix-blend-mode:multiply;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .sky-tint{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    opacity:0;
+    transition:opacity 3s ease, background 3s ease;
   }
 
   .wrap{ position:relative; z-index:1; max-width:1040px; margin:0 auto; padding:0 28px; }
@@ -93,11 +104,13 @@
     line-height:1.65;
     color:var(--ink-soft);
     margin:0;
+    transition:color 2.5s ease;
   }
   .origin{
     margin-top:30px;
     display:flex; align-items:center; gap:12px;
     font-size:14px; color:var(--ink-soft);
+    transition:color 2.5s ease;
   }
   .origin .dot{
     width:9px;height:9px;border-radius:50%;
@@ -137,13 +150,50 @@
     box-shadow:0 10px 20px -10px rgba(60,42,30,0.5);
   }
 
+  .stats-bar{
+    margin-top:44px;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:26px 0;
+  }
+  .stats-bar .stat{
+    text-align:center;
+    border-right:1px solid var(--line);
+    padding:0 10px;
+  }
+  .stats-bar .stat:last-child{ border-right:none; }
+  .stats-bar .stat strong{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-size:1.9rem;
+    font-weight:600;
+    color:var(--rust-2);
+    line-height:1;
+  }
+  .stats-bar .stat span{
+    display:block;
+    margin-top:8px;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  @media (max-width:640px){
+    .stats-bar{ grid-template-columns:repeat(2, 1fr); row-gap:20px; }
+    .stats-bar .stat:nth-child(2){ border-right:none; }
+  }
+
   .map-frame{
     margin-top:56px;
     border:1px solid var(--line);
     border-radius:20px;
-    background:linear-gradient(160deg, #fbf3e5, var(--paper-2));
+    background:linear-gradient(160deg, var(--paper), var(--paper-2));
     padding:10px;
     overflow:hidden;
+    transition:background 2.5s ease, border-color 2.5s ease;
   }
   .map-frame svg{ display:block; width:100%; height:auto; }
   .route-path{ stroke-dasharray:6 10; animation: dash 26s linear infinite; }
@@ -165,15 +215,27 @@
     position:relative;
     border-radius:18px;
     border:1px solid var(--line);
-    background:#fffaf1;
+    background:var(--card-bg);
     overflow:hidden;
     text-decoration:none;
     color:inherit;
     display:flex;
     flex-direction:column;
     box-shadow:0 1px 2px rgba(60,42,30,0.04);
-    transition:transform 0.4s cubic-bezier(.2,.8,.2,1), box-shadow 0.4s ease, border-color 0.4s ease;
+    transition:transform 0.4s cubic-bezier(.2,.8,.2,1), box-shadow 0.4s ease, border-color 0.4s ease, background-color 2.5s ease;
   }
+  .card::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:4px;
+    background:var(--accent, var(--rust));
+    z-index:3;
+  }
+  .card[data-accent="chicago"]{ --accent: #c85a2e; }
+  .card[data-accent="niagara"]{ --accent: #3f7fa6; }
+  .card[data-accent="tennessee"]{ --accent: #3f6e64; }
+  .card[data-accent="laceplacid"]{ --accent: #8a3fa8; }
   .card:hover, .card:focus-visible{
     transform:translateY(-6px);
     border-color:rgba(200,90,46,0.35);
@@ -252,6 +314,16 @@
   .card.soon .card-body{ justify-content:center; min-height:236px; }
   .card.soon .card-title{ color:var(--ink-soft); }
 
+  .reveal{
+    opacity:0;
+    transform:translateY(22px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
   footer{
     padding:60px 0 90px;
     border-top:1px solid var(--line);
@@ -272,7 +344,7 @@
 
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
-    .route-path, .pin-pulse, .card, .card-cta svg, .card-art img{ animation:none; transition:none; }
+    .route-path, .pin-pulse, .card, .card-cta svg, .card-art img, .reveal{ animation:none; transition:none; opacity:1; transform:none; }
   }
 </style>
   <!-- Google tag (gtag.js) -->
@@ -298,6 +370,8 @@
 </head>
 <body>
 
+<div class="sky-tint" id="skyTint"></div>
+
 <div class="wrap">
 
   <header class="hero">
@@ -314,6 +388,13 @@
         <div class="postcard pc2"><img src="https://loremflickr.com/400/500/niagarafalls,winter/all" alt="Niagara Falls in winter" loading="lazy"></div>
         <div class="postcard pc3"><img src="https://loremflickr.com/400/500/smokymountains,fallfoliage/all" alt="Great Smoky Mountains in fall" loading="lazy"></div>
       </div>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat"><strong>4</strong><span>Trips logged</span></div>
+      <div class="stat"><strong>~2,600</strong><span>Miles driven</span></div>
+      <div class="stat"><strong>7</strong><span>States visited</span></div>
+      <div class="stat"><strong>3</strong><span>Seasons chased</span></div>
     </div>
 
     <div class="map-frame">
@@ -361,7 +442,7 @@
     <p class="section-label">Trips logged</p>
     <div class="cards">
 
-      <a class="card" href="https://ani072018.github.io/Boston-Chicago-Boston/" target="_blank" rel="noopener">
+      <a class="card reveal" data-accent="chicago" href="https://ani072018.github.io/Boston-Chicago-Boston/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 01</span>
           <img src="https://loremflickr.com/640/420/chicago,skyline/all" alt="Chicago skyline" loading="lazy">
@@ -375,7 +456,7 @@
         </div>
       </a>
 
-      <a class="card" href="https://ani072018.github.io/Boston-Niagra-Boston/" target="_blank" rel="noopener">
+      <a class="card reveal" data-accent="niagara" href="https://ani072018.github.io/Boston-Niagra-Boston/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 02</span>
           <img src="https://loremflickr.com/640/420/niagarafalls,winter/all" alt="Niagara Falls in winter" loading="lazy">
@@ -389,7 +470,7 @@
         </div>
       </a>
 
-      <a class="card" href="https://ani072018.github.io/Boston-Tennessee-Boston/" target="_blank" rel="noopener">
+      <a class="card reveal" data-accent="tennessee" href="https://ani072018.github.io/Boston-Tennessee-Boston/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 03</span>
           <img src="https://loremflickr.com/640/420/smokymountains,fallfoliage/all" alt="Great Smoky Mountains in fall" loading="lazy">
@@ -403,7 +484,7 @@
         </div>
       </a>
 
-      <a class="card" href="https://ani072018.github.io/Boston-LakePlacid-Boston/" target="_blank" rel="noopener">
+      <a class="card reveal" data-accent="laceplacid" href="https://ani072018.github.io/Boston-LakePlacid-Boston/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 04</span>
           <img src="https://loremflickr.com/640/420/whiteface,mountain,fallfoliage/all" alt="Whiteface Mountain summit in fall" loading="lazy">
@@ -428,11 +509,98 @@
   </section>
 
   <footer>
-    <p>Updated as new trips wrap up.</p>
-    <p class="signature">safe travels, always back to Boston</p>
+    <div>
+      <p class="signature" style="margin:0 0 6px 0;">safe travels, always back to Boston</p>
+      <p>Updated as new trips wrap up.</p>
+    </div>
+    <div style="display:flex; gap:22px; flex-wrap:wrap;">
+      <a href="https://ani072018.github.io/Boston-Chicago-Boston/" style="color:var(--ink-soft); font-size:13px; text-decoration:none; border-bottom:1px solid var(--line);">Chicago</a>
+      <a href="https://ani072018.github.io/Boston-Niagra-Boston/" style="color:var(--ink-soft); font-size:13px; text-decoration:none; border-bottom:1px solid var(--line);">Niagara</a>
+      <a href="https://ani072018.github.io/Boston-Tennessee-Boston/" style="color:var(--ink-soft); font-size:13px; text-decoration:none; border-bottom:1px solid var(--line);">Tennessee</a>
+      <a href="https://ani072018.github.io/Boston-LakePlacid-Boston/" style="color:var(--ink-soft); font-size:13px; text-decoration:none; border-bottom:1px solid var(--line);">Lake Placid</a>
+    </div>
   </footer>
 
 </div>
+
+<script>
+  // ---- Time-of-day theme engine ----
+  // Palette stops across a 24h cycle: [hour, {paper, paper2, ink, inkSoft, line, cardBg, skyTint}]
+  const stops = [
+    [0,  {paper:'#211d29', paper2:'#2a2434', ink:'#f0ece0', inkSoft:'#b6ada0', line:'rgba(240,236,224,0.14)', cardBg:'#2c2636', sky:'rgba(40,30,70,0.25)'}],
+    [5,  {paper:'#2a2436', paper2:'#372c3c', ink:'#f0ece0', inkSoft:'#bcb2a6', line:'rgba(240,236,224,0.14)', cardBg:'#362d40', sky:'rgba(90,60,90,0.20)'}],
+    [7,  {paper:'#f6ded2', paper2:'#f2c9ad', ink:'#3c2a1e', inkSoft:'#7a6152', line:'rgba(60,42,30,0.14)', cardBg:'#fff5ec', sky:'rgba(255,170,110,0.14)'}],
+    [11, {paper:'#faf3e6', paper2:'#f2e6cf', ink:'#3c2a1e', inkSoft:'#6b5643', line:'rgba(60,42,30,0.12)', cardBg:'#fffaf1', sky:'rgba(255,255,255,0)'}],
+    [16, {paper:'#f6ecdc', paper2:'#efe0c6', ink:'#3c2a1e', inkSoft:'#6b5643', line:'rgba(60,42,30,0.14)', cardBg:'#fffaf1', sky:'rgba(255,200,120,0.06)'}],
+    [18, {paper:'#f3ddb9', paper2:'#e8c090', ink:'#3c2a1e', inkSoft:'#6f5741', line:'rgba(60,42,30,0.16)', cardBg:'#fff3df', sky:'rgba(230,110,60,0.16)'}],
+    [20, {paper:'#39304a', paper2:'#4a3d5c', ink:'#f2ede2', inkSoft:'#c2b8ab', line:'rgba(242,237,226,0.14)', cardBg:'#463a58', sky:'rgba(120,70,120,0.22)'}],
+    [24, {paper:'#211d29', paper2:'#2a2434', ink:'#f0ece0', inkSoft:'#b6ada0', line:'rgba(240,236,224,0.14)', cardBg:'#2c2636', sky:'rgba(40,30,70,0.25)'}],
+  ];
+
+  function hexToRgb(hex){
+    const h = hex.replace('#','');
+    return [parseInt(h.substring(0,2),16), parseInt(h.substring(2,4),16), parseInt(h.substring(4,6),16)];
+  }
+  function lerp(a,b,t){ return a + (b-a)*t; }
+  function mixHex(hex1, hex2, t){
+    const c1 = hexToRgb(hex1), c2 = hexToRgb(hex2);
+    const r = Math.round(lerp(c1[0], c2[0], t));
+    const g = Math.round(lerp(c1[1], c2[1], t));
+    const b = Math.round(lerp(c1[2], c2[2], t));
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+  function mixRgba(rgba1, rgba2, t){
+    // naive: just crossfade by picking nearer one past 50%, good enough for subtle sky tint
+    return t < 0.5 ? rgba1 : rgba2;
+  }
+
+  function applyTimeTheme(){
+    const now = new Date();
+    const hourFloat = now.getHours() + now.getMinutes()/60;
+
+    let lower = stops[0], upper = stops[stops.length-1];
+    for(let i=0;i<stops.length-1;i++){
+      if(hourFloat >= stops[i][0] && hourFloat <= stops[i+1][0]){
+        lower = stops[i]; upper = stops[i+1]; break;
+      }
+    }
+    const span = upper[0] - lower[0];
+    const t = span === 0 ? 0 : (hourFloat - lower[0]) / span;
+    const a = lower[1], b = upper[1];
+
+    const root = document.documentElement.style;
+    root.setProperty('--paper', mixHex(a.paper, b.paper, t));
+    root.setProperty('--paper-2', mixHex(a.paper2, b.paper2, t));
+    root.setProperty('--ink', mixHex(a.ink, b.ink, t));
+    root.setProperty('--ink-soft', mixHex(a.inkSoft, b.inkSoft, t));
+    root.setProperty('--card-bg', mixHex(a.cardBg, b.cardBg, t));
+    root.setProperty('--line', t < 0.5 ? a.line : b.line);
+
+    const skyEl = document.getElementById('skyTint');
+    if(skyEl){
+      skyEl.style.background = t < 0.5 ? a.sky : b.sky;
+      skyEl.style.opacity = '1';
+    }
+  }
+
+  applyTimeTheme();
+  setInterval(applyTimeTheme, 60000); // refresh every minute so the site slowly drifts through the day
+</script>
+
+<script>
+  // ---- Scroll reveal ----
+  const revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12});
+    revealEls.forEach(el=>io.observe(el));
+  } else {
+    revealEls.forEach(el=>el.classList.add('visible'));
+  }
+</script>
 
 </body>
 </html>
