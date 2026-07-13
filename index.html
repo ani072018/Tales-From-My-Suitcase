@@ -325,6 +325,112 @@
     transform:translateY(0);
   }
 
+  /* ---- Newsletter ---- */
+  section.newsletter{
+    margin-top:64px;
+    position:relative;
+    border-radius:22px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:
+      radial-gradient(600px 260px at 15% -20%, rgba(200,90,46,0.14), transparent 60%),
+      radial-gradient(600px 260px at 100% 120%, rgba(63,110,100,0.14), transparent 60%),
+      linear-gradient(160deg, var(--paper-2), var(--paper));
+    padding:56px 48px;
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:36px;
+    align-items:center;
+    transition:background-color 2.5s ease, border-color 2.5s ease;
+  }
+  section.newsletter::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border:1px solid transparent;
+    background:
+      linear-gradient(var(--paper), var(--paper)) padding-box,
+      linear-gradient(120deg, var(--rust), var(--gold), var(--teal)) border-box;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity:0.5;
+    pointer-events:none;
+  }
+  .newsletter-copy .section-label{ margin-bottom:16px; }
+  section.newsletter h2{
+    font-size:clamp(1.7rem, 3vw, 2.3rem);
+    line-height:1.15;
+    margin:0 0 14px;
+    color:var(--ink);
+  }
+  section.newsletter h2 em{
+    font-style:italic;
+    font-weight:500;
+    background:linear-gradient(100deg, var(--rust), var(--gold));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  section.newsletter p.newsletter-lede{
+    max-width:44ch;
+    font-size:1rem;
+    line-height:1.6;
+    color:var(--ink-soft);
+    margin:0 0 20px;
+  }
+  .newsletter-points{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .newsletter-points li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:13.5px;
+    color:var(--ink-soft);
+  }
+  .newsletter-points li::before{
+    content:"";
+    width:7px; height:7px;
+    border-radius:50%;
+    background:var(--rust-2);
+    flex-shrink:0;
+  }
+  .newsletter-embed-frame{
+    position:relative;
+    border-radius:16px;
+    background:var(--card-bg);
+    border:1px solid var(--line);
+    box-shadow:0 24px 46px -26px rgba(60,42,30,0.4);
+    padding:16px;
+    transition:background-color 2.5s ease, border-color 2.5s ease;
+  }
+  .newsletter-embed-frame .postcard-tag{
+    position:absolute;
+    top:-14px;
+    left:20px;
+    bottom:auto;
+    right:auto;
+  }
+  .newsletter-embed-frame iframe{
+    display:block;
+    width:100%;
+    height:280px;
+    border:none;
+    border-radius:10px;
+    background:transparent;
+  }
+  @media (max-width:860px){
+    section.newsletter{ grid-template-columns:1fr; padding:40px 26px; }
+  }
+
   footer{
     padding:60px 0 90px;
     border-top:1px solid var(--line);
@@ -526,24 +632,28 @@
 
     </div>
   </section>
-<section class="newsletter">
 
-<h2>Join Tales From My Suitcase</h2>
+  <section class="newsletter">
+    <div class="newsletter-copy">
+      <p class="section-label">Stay on the road</p>
+      <h2>Join <em>Tales From My Suitcase</em></h2>
+      <p class="newsletter-lede">New routes, scenic detours, and the honest version of trip planning — delivered straight to your inbox, before it hits the blog.</p>
+      <ul class="newsletter-points">
+        <li>New road trips as they get logged</li>
+        <li>Real itineraries, not just highlight reels</li>
+        <li>Written from the road, out of Boston</li>
+      </ul>
+    </div>
+    <div class="newsletter-embed-frame">
+      <span class="postcard-tag">Sign up</span>
+      <iframe
+        src="https://talesfrommysuitcase.substack.com/embed"
+        title="Subscribe to Tales From My Suitcase on Substack"
+        scrolling="no">
+      </iframe>
+    </div>
+  </section>
 
-<p>
-Get new road trips, scenic routes, and travel stories delivered to your inbox.
-</p>
-
-<iframe 
-src="https://talesfrommysuitcase.substack.com/embed"
-width="480"
-height="320"
-style="border:1px solid #EEE; background:white;"
-frameborder="0"
-scrolling="no">
-</iframe>
-
-</section>
   <footer>
     <div>
       <p class="signature" style="margin:0 0 6px 0;">safe travels, always back to Boston</p>
@@ -562,7 +672,6 @@ scrolling="no">
 
 <script>
   // ---- Time-of-day theme engine ----
-  // Palette stops across a 24h cycle: [hour, {paper, paper2, ink, inkSoft, line, cardBg, skyTint}]
   const stops = [
     [0,  {paper:'#211d29', paper2:'#2a2434', ink:'#f0ece0', inkSoft:'#b6ada0', line:'rgba(240,236,224,0.14)', cardBg:'#2c2636', sky:'rgba(40,30,70,0.25)'}],
     [5,  {paper:'#2a2436', paper2:'#372c3c', ink:'#f0ece0', inkSoft:'#bcb2a6', line:'rgba(240,236,224,0.14)', cardBg:'#362d40', sky:'rgba(90,60,90,0.20)'}],
@@ -585,10 +694,6 @@ scrolling="no">
     const g = Math.round(lerp(c1[1], c2[1], t));
     const b = Math.round(lerp(c1[2], c2[2], t));
     return `rgb(${r}, ${g}, ${b})`;
-  }
-  function mixRgba(rgba1, rgba2, t){
-    // naive: just crossfade by picking nearer one past 50%, good enough for subtle sky tint
-    return t < 0.5 ? rgba1 : rgba2;
   }
 
   function applyTimeTheme(){
@@ -621,7 +726,7 @@ scrolling="no">
   }
 
   applyTimeTheme();
-  setInterval(applyTimeTheme, 60000); // refresh every minute so the site slowly drifts through the day
+  setInterval(applyTimeTheme, 60000);
 </script>
 
 <script>
