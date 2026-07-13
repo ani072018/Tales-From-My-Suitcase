@@ -236,6 +236,7 @@
   .card[data-accent="niagara"]{ --accent: #3f7fa6; }
   .card[data-accent="tennessee"]{ --accent: #3f6e64; }
   .card[data-accent="laceplacid"]{ --accent: #8a3fa8; }
+  .card[data-accent="nyc"]{ --accent: #a8324a; }
   .card:hover, .card:focus-visible{
     transform:translateY(-6px);
     border-color:rgba(200,90,46,0.35);
@@ -379,26 +380,26 @@
       <div>
         <p class="eyebrow">Field notes from the highway</p>
         <h1>The Road<br><em>Journal</em></h1>
-        <p class="lede">A running record of drives out of Boston — chocolate towns, thundering falls, smoky southern hills, and gold-lit mountain summits. Each trip has its own site; this is the map that ties them together.</p>
+        <p class="lede">A running record of drives out of Boston — chocolate towns, thundering falls, smoky southern hills, gold-lit mountain summits, and a pre-dawn dash to a parade. Each trip has its own site; this is the map that ties them together.</p>
         <div class="origin"><span class="dot"></span> Home base: Boston, MA</div>
       </div>
       <div class="postcards">
-        <span class="postcard-tag">Route 04</span>
-        <div class="postcard pc1"><img src="https://loremflickr.com/400/500/whiteface,mountain,fallfoliage/all" alt="Whiteface Mountain in fall" loading="lazy"></div>
+        <span class="postcard-tag">Route 05</span>
+        <div class="postcard pc1"><img src="https://loremflickr.com/400/500/macysparade,balloon/all" alt="Macy's Thanksgiving Day Parade balloon" loading="lazy"></div>
         <div class="postcard pc2"><img src="https://loremflickr.com/400/500/niagarafalls,winter/all" alt="Niagara Falls in winter" loading="lazy"></div>
         <div class="postcard pc3"><img src="https://loremflickr.com/400/500/smokymountains,fallfoliage/all" alt="Great Smoky Mountains in fall" loading="lazy"></div>
       </div>
     </div>
 
     <div class="stats-bar">
-      <div class="stat"><strong>4</strong><span>Trips logged</span></div>
-      <div class="stat"><strong>~2,600</strong><span>Miles driven</span></div>
-      <div class="stat"><strong>7</strong><span>States visited</span></div>
-      <div class="stat"><strong>3</strong><span>Seasons chased</span></div>
+      <div class="stat"><strong>5</strong><span>Trips logged</span></div>
+      <div class="stat"><strong>~2,800</strong><span>Miles driven</span></div>
+      <div class="stat"><strong>8</strong><span>States visited</span></div>
+      <div class="stat"><strong>4</strong><span>Seasons chased</span></div>
     </div>
 
     <div class="map-frame">
-      <svg viewBox="0 0 1000 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated map showing routes from Boston to Chicago, Niagara Falls, Tennessee, and Lake Placid">
+      <svg viewBox="0 0 1000 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated map showing routes from Boston to Chicago, Niagara Falls, Tennessee, Lake Placid, and New York City">
         <defs>
           <radialGradient id="fieldGlow" cx="30%" cy="30%" r="80%">
             <stop offset="0%" stop-color="#fbf3e5"/>
@@ -418,6 +419,7 @@
         <path class="route-path" d="M 830 260 C 800 190, 760 120, 700 70" stroke="#c98a2c" stroke-width="2" fill="none" stroke-linecap="round"/>
         <path class="route-path" d="M 830 260 C 760 300, 680 320, 560 300" stroke="#3f6e64" stroke-width="2" fill="none" stroke-linecap="round"/>
         <path class="route-path" d="M 830 260 C 810 170, 780 110, 760 90" stroke="#8a3fa8" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path class="route-path" d="M 830 260 C 815 235, 800 210, 790 195" stroke="#a8324a" stroke-width="2" fill="none" stroke-linecap="round"/>
 
         <circle cx="830" cy="260" r="6" fill="#3c2a1e"/>
         <circle class="pin-pulse" cx="830" cy="260" r="6" fill="none" stroke="#3c2a1e" stroke-width="1.5"/>
@@ -434,6 +436,9 @@
 
         <circle cx="760" cy="90" r="5.5" fill="#8a3fa8"/>
         <text x="760" y="72" fill="#3c2a1e" font-family="Source Sans 3" font-size="12.5" text-anchor="middle">Lake Placid</text>
+
+        <circle cx="790" cy="195" r="5.5" fill="#a8324a"/>
+        <text x="790" y="212" fill="#3c2a1e" font-family="Source Sans 3" font-size="12.5" text-anchor="middle">New York</text>
       </svg>
     </div>
   </header>
@@ -498,6 +503,20 @@
         </div>
       </a>
 
+      <a class="card reveal" data-accent="nyc" href="https://ani072018.github.io/Boston-Macys-Parade/" target="_blank" rel="noopener">
+        <div class="card-art">
+          <span class="card-mile-badge">Route 05</span>
+          <img src="https://loremflickr.com/640/420/macysparade,balloon,newyork/all" alt="Macy's Thanksgiving Day Parade balloon over Manhattan" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-title">Boston → Big Balloons (NYC) → Boston</span>
+          <span class="card-date">Thanksgiving 2025 · a 3 AM dash to the parade</span>
+          <span class="card-cta">Visit site
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+
       <div class="card soon">
         <div class="card-body">
           <span class="card-title">Next route</span>
@@ -518,6 +537,7 @@
       <a href="https://ani072018.github.io/Boston-Niagra-Boston/" style="color:var(--ink-soft); font-size:13px; text-decoration:none; border-bottom:1px solid var(--line);">Niagara</a>
       <a href="https://ani072018.github.io/Boston-Tennessee-Boston/" style="color:var(--ink-soft); font-size:13px; text-decoration:none; border-bottom:1px solid var(--line);">Tennessee</a>
       <a href="https://ani072018.github.io/Boston-LakePlacid-Boston/" style="color:var(--ink-soft); font-size:13px; text-decoration:none; border-bottom:1px solid var(--line);">Lake Placid</a>
+      <a href="https://ani072018.github.io/Boston-NYC-Boston/" style="color:var(--ink-soft); font-size:13px; text-decoration:none; border-bottom:1px solid var(--line);">NYC Parade</a>
     </div>
   </footer>
 
