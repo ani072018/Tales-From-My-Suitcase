@@ -410,7 +410,7 @@
     border:1px solid var(--line);
     box-shadow:0 24px 46px -26px rgba(60,42,30,0.4);
     padding:18px;
-    max-width:480px;
+    max-width:400px;
     margin-left:auto;
     transition:background-color 2.5s ease, border-color 2.5s ease;
   }
@@ -421,19 +421,29 @@
     bottom:auto;
     right:auto;
   }
-  .newsletter-embed-frame iframe{
-    display:block;
+  /* The Substack embed renders tall (~560px of real content) with no way to
+     restyle it directly, so we render it at full size then scale the whole
+     thing down and clip the wrapper to the scaled dimensions. This keeps
+     every element (button, fields, legal text) intact and proportioned,
+     just smaller — instead of cropping or leaving a huge block. */
+  .newsletter-embed-scale{
     width:100%;
-    min-width:0;
+    height:300px;
+    overflow:hidden;
+    border-radius:10px;
+  }
+  .newsletter-embed-scale iframe{
+    display:block;
+    width:187%;
     height:560px;
     border:none;
-    border-radius:10px;
     background:transparent;
+    transform:scale(0.535);
+    transform-origin:top left;
   }
   @media (max-width:860px){
     section.newsletter{ grid-template-columns:1fr; padding:40px 26px; }
-    .newsletter-embed-frame{ max-width:100%; margin-left:0; }
-    .newsletter-embed-frame iframe{ height:640px; }
+    .newsletter-embed-frame{ max-width:420px; margin-left:auto; margin-right:auto; }
   }
 
   footer{
@@ -651,11 +661,13 @@
     </div>
     <div class="newsletter-embed-frame">
       <span class="postcard-tag">Sign up</span>
-      <iframe
-        src="https://talesfrommysuitcase.substack.com/embed"
-        title="Subscribe to Tales From My Suitcase on Substack"
-        scrolling="no">
-      </iframe>
+      <div class="newsletter-embed-scale">
+        <iframe
+          src="https://talesfrommysuitcase.substack.com/embed"
+          title="Subscribe to Tales From My Suitcase on Substack"
+          scrolling="no">
+        </iframe>
+      </div>
     </div>
   </section>
 
