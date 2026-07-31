@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Road Journal — Scenic Road Trip Guides & Travel Stories</title>
+<title>Tales From My Suitcase — The Road Journal | Scenic Road Trip Guides & Travel Stories</title>
 <meta name="description" content="Family-friendly road trip itineraries and travel stories from the US Northeast, Midwest, and Appalachians — waterfalls, scenic drives, and real trip planning tips, written in English and Bengali.">
 <meta name="keywords" content="road trip itinerary, scenic drives USA, waterfall road trips, family road trips, Bengali travel blog">
-<meta property="og:title" content="The Road Journal — Road Trip Guides">
+<meta property="og:title" content="Tales From My Suitcase — The Road Journal">
 <meta property="og:description" content="Real road trip itineraries covering waterfalls, national parks, and scenic drives across the US.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ani072018.github.io/Tales-From-My-Suitcase/">
@@ -14,12 +14,12 @@
 <link rel="canonical" href="https://ani072018.github.io/Tales-From-My-Suitcase/">
 
 <!-- Open Graph -->
-<meta property="og:site_name" content="The Road Journal">
+<meta property="og:site_name" content="Tales From My Suitcase">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://ani072018.github.io/Tales-From-My-Suitcase/assets/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Road Journal — road trip guides and travel stories">
+<meta property="og:image:alt" content="Tales From My Suitcase — road trip guides and travel stories">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -73,7 +73,69 @@
 
   .wrap{ position:relative; z-index:1; max-width:1040px; margin:0 auto; padding:0 28px; }
 
-  header.hero{ padding:100px 0 20px; }
+  /* ---- Brand bar ---- */
+  .brand-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:26px 0 0;
+  }
+  .brand-mark{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .brand-mark-icon{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    flex-shrink:0;
+    background:linear-gradient(150deg, var(--rust) 0%, var(--gold) 55%, var(--teal) 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 16px -8px rgba(60,42,30,0.45);
+  }
+  .brand-mark-icon svg{ width:20px; height:20px; }
+  .brand-mark-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.15;
+  }
+  .brand-mark-text .brand-name{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-style:italic;
+    font-size:1.18rem;
+    color:var(--ink);
+  }
+  .brand-mark-text .brand-sub{
+    font-size:10.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-top:2px;
+  }
+  .brand-bar-links{
+    display:flex;
+    align-items:center;
+    gap:22px;
+  }
+  .brand-bar-links a{
+    font-size:13px;
+    color:var(--ink-soft);
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+    transition:color 0.25s ease, border-color 0.25s ease;
+  }
+  .brand-bar-links a:hover{ color:var(--rust-2); border-color:var(--rust-2); }
+  @media (max-width:640px){
+    .brand-bar-links{ display:none; }
+  }
+
+  header.hero{ padding:56px 0 20px; }
   .hero-grid{
     display:grid;
     grid-template-columns:1.35fr 1fr;
@@ -674,7 +736,7 @@
     {
       "@type": "Blog",
       "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#blog",
-      "name": "The Road Journal — Tales From My Suitcase",
+      "name": "Tales From My Suitcase — The Road Journal",
       "url": "https://ani072018.github.io/Tales-From-My-Suitcase/",
       "description": "Family-friendly road trip itineraries and travel stories from the US Northeast, Midwest, and Appalachians, written in English and Bengali.",
       "author": { "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#author" },
@@ -697,7 +759,7 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "The Road Journal",
+          "name": "Tales From My Suitcase",
           "item": "https://ani072018.github.io/Tales-From-My-Suitcase/"
         }
       ]
@@ -877,6 +939,28 @@
 <div class="sky-tint" id="skyTint"></div>
 
 <div class="wrap">
+
+  <div class="brand-bar">
+    <a class="brand-mark" href="https://ani072018.github.io/Tales-From-My-Suitcase/">
+      <span class="brand-mark-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="4" y="7" width="16" height="13" rx="2" stroke="#fffaf1" stroke-width="1.6"/>
+          <path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7" stroke="#fffaf1" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M4 12h16" stroke="#fffaf1" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand-mark-text">
+        <span class="brand-name">Tales From My Suitcase</span>
+        <span class="brand-sub">The Road Journal</span>
+      </span>
+    </a>
+    <nav class="brand-bar-links">
+      <a href="#latest-from-the-road">Latest</a>
+      <a href="#roundup">Guides</a>
+      <a href="#about">About</a>
+      <a href="#newsletter">Newsletter</a>
+    </nav>
+  </div>
 
   <header class="hero">
     <div class="hero-grid">
@@ -1071,7 +1155,7 @@
     </div>
   </section>
 
-  <section class="latest reveal">
+  <section class="latest reveal" id="latest-from-the-road">
     <p class="section-label">Latest from the road</p>
     <div class="latest-list">
       <a class="latest-item" href="https://ani072018.github.io/Boston-Hershey-Boston/" target="_blank" rel="noopener">
@@ -1101,7 +1185,7 @@
     </div>
   </section>
 
-  <section class="roundup reveal">
+  <section class="roundup reveal" id="roundup">
     <p class="section-label">Road trip guides by season</p>
     <div class="roundup-grid">
       <div class="roundup-card">
@@ -1135,17 +1219,17 @@
     </div>
   </section>
 
-  <section class="about">
+  <section class="about" id="about">
     <div class="about-avatar"><span>AM</span></div>
     <div class="about-copy">
       <p class="section-label">Who's driving</p>
       <h2>Hi, I'm <em>Anirban Mitra</em></h2>
       <p>A travel enthusiast, storyteller, and explorer — passionate about discovering new places, cultures, landscapes, and experiences. Here you'll find road trip adventures, detailed itineraries, practical tips, and reflections from journeys near and far, because every scenic drive, hidden gem, and historic town has a story worth telling.</p>
-      <p class="about-signoff">— join me as I explore the world one adventure at a time</p>
+      <p class="about-signoff">— join me as I explore the world one adventure at a time, one suitcase at a time</p>
     </div>
   </section>
 
-  <section class="newsletter">
+  <section class="newsletter" id="newsletter">
     <div class="newsletter-copy">
       <p class="section-label">Stay on the road</p>
       <h2>Join <em>Tales From My Suitcase</em></h2>
@@ -1170,7 +1254,7 @@
 
   <footer>
     <div>
-      <p class="signature" style="margin:0 0 6px 0;">safe travels, always back to Boston</p>
+      <p class="signature" style="margin:0 0 6px 0;">Tales From My Suitcase — safe travels, always back to Boston</p>
       <p>Updated as new trips wrap up.</p>
     </div>
     <div style="display:flex; gap:22px; flex-wrap:wrap;">
