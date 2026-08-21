@@ -279,18 +279,59 @@
     align-items:center;
     border-bottom:1px solid var(--line);
     flex-wrap:wrap;
-    gap:10px;
+    gap:12px;
   }
   .compare-header h2{
     margin:0;
     font-size:1.15rem;
     font-weight:600;
+    line-height:1.2;
   }
-  .compare-header span{
+  .compare-header-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .compare-header span.compare-hint{
     font-size:12px;
     letter-spacing:0.08em;
     text-transform:uppercase;
     color:var(--ink-soft);
+  }
+  .compare-toggle{
+    display:none;
+    align-items:center;
+    gap:8px;
+    background:var(--ink);
+    color:var(--paper);
+    border:1px solid var(--ink);
+    border-radius:100px;
+    padding:7px 14px 7px 16px;
+    font-family:'Source Sans 3', sans-serif;
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.02em;
+    cursor:pointer;
+    transition:transform 0.2s ease, background 0.2s ease;
+  }
+  .compare-toggle:hover{ transform:translateY(-1px); }
+  .compare-toggle .toggle-icon{
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:var(--paper);
+    color:var(--ink);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:transform 0.4s cubic-bezier(.2,.8,.2,1);
+  }
+  .compare-wrap.mobile-open .compare-toggle .toggle-icon{
+    transform:rotate(180deg);
+  }
+  .compare-body{
+    overflow:hidden;
   }
   .compare-table{
     width:100%;
@@ -333,8 +374,74 @@
     border-bottom:1px solid var(--line);
   }
   .compare-link:hover{ border-color:var(--rust-2); }
+
+  /* Desktop: always visible */
+  .compare-body{
+    display:block;
+  }
+
+  /* Mobile: attractive card list + collapsible */
   @media (max-width:720px){
-    .compare-table{ display:block; overflow-x:auto; white-space:nowrap; }
+    .compare-toggle{ display:inline-flex; }
+    .compare-header span.compare-hint{ display:none; }
+    .compare-body{
+      display:grid;
+      grid-template-rows:0fr;
+      transition:grid-template-rows 0.5s cubic-bezier(.2,.8,.2,1);
+    }
+    .compare-wrap.mobile-open .compare-body{
+      grid-template-rows:1fr;
+    }
+    .compare-body-inner{
+      overflow:hidden;
+    }
+    .compare-table, .compare-table tbody{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      padding:14px 14px 16px;
+    }
+    .compare-table thead{ display:none; }
+    .compare-table tr{
+      display:flex;
+      flex-direction:column;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:linear-gradient(180deg, var(--card-bg), var(--paper));
+      overflow:hidden;
+      box-shadow:0 4px 16px -12px rgba(60,42,30,0.25);
+    }
+    .compare-table tr td{
+      border:none;
+      padding:10px 16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      font-size:13.5px;
+    }
+    .compare-table tr td:first-child{
+      font-size:1.05rem;
+      padding:16px 16px 10px;
+      border-bottom:1px dashed var(--line);
+      justify-content:flex-start;
+      background:rgba(239,224,198,0.25);
+    }
+    .compare-table tr td[data-label]:before{
+      content:attr(data-label);
+      font-size:10.5px;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+      font-weight:600;
+      font-family:'Source Sans 3', sans-serif;
+    }
+    .compare-table tr td:last-child{
+      padding-top:6px;
+      padding-bottom:14px;
+      justify-content:flex-end;
+    }
+    .compare-table tr td:last-child:before{ display:none; }
   }
 
   .map-frame{
@@ -562,35 +669,118 @@
   }
   .roundup-card a:hover{ color:var(--rust-2); border-color:var(--rust-2); }
 
-  /* ---- NEW: FAQ ---- */
+  /* ---- NEW: FAQ - attractive collapsible ---- */
   section.faq{
     margin-top:70px;
-    border:1px solid var(--line);
-    border-radius:18px;
-    background:var(--card-bg);
-    padding:28px 28px 10px;
   }
   section.faq h2{
-    margin:0 0 22px;
-    font-size:clamp(1.4rem, 2.4vw, 1.8rem);
+    margin:0 0 6px;
+    font-size:clamp(1.5rem, 2.6vw, 2rem);
+    line-height:1.15;
+  }
+  section.faq .faq-sub{
+    margin:0 0 24px;
+    font-size:14px;
+    color:var(--ink-soft);
+    max-width:60ch;
+    line-height:1.6;
+  }
+  .faq-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
   }
   .faq-item{
-    padding:18px 0;
-    border-bottom:1px solid var(--line);
+    border:1px solid var(--line);
+    border-radius:16px;
+    background:var(--card-bg);
+    overflow:hidden;
+    transition:border-color 0.35s ease, box-shadow 0.35s ease, background-color 2.5s ease;
   }
-  .faq-item:last-child{ border-bottom:none; }
-  .faq-item h3{
-    margin:0 0 8px;
+  .faq-item:hover{
+    border-color:rgba(200,90,46,0.22);
+  }
+  .faq-item.active{
+    border-color:rgba(200,90,46,0.35);
+    box-shadow:0 18px 30px -22px rgba(60,42,30,0.35);
+  }
+  .faq-question{
+    width:100%;
+    text-align:left;
+    background:transparent;
+    border:none;
+    padding:18px 20px 18px 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    cursor:pointer;
+    font-family:'Fraunces', serif;
     font-size:1.08rem;
     font-weight:600;
     color:var(--ink);
+    line-height:1.35;
   }
-  .faq-item p{
-    margin:0;
-    font-size:14.5px;
-    line-height:1.65;
+  .faq-question:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:-2px;
+    border-radius:16px;
+  }
+  .faq-question-text{
+    flex:1;
+  }
+  .faq-icon{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    transition:transform 0.4s cubic-bezier(.2,.8,.2,1), background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     color:var(--ink-soft);
-    max-width:70ch;
+  }
+  .faq-item.active .faq-icon{
+    background:var(--ink);
+    color:var(--paper);
+    border-color:var(--ink);
+    transform:rotate(45deg);
+  }
+  .faq-answer{
+    display:grid;
+    grid-template-rows:0fr;
+    transition:grid-template-rows 0.45s cubic-bezier(.2,.8,.2,1);
+  }
+  .faq-item.active .faq-answer{
+    grid-template-rows:1fr;
+  }
+  .faq-answer-inner{
+    overflow:hidden;
+  }
+  .faq-answer-inner p{
+    margin:0;
+    padding:0 22px 20px 22px;
+    font-size:14.5px;
+    line-height:1.7;
+    color:var(--ink-soft);
+    max-width:72ch;
+  }
+  .faq-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family:'Source Sans 3', sans-serif;
+    font-size:10.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+    padding:4px 10px;
+    border-radius:100px;
+    margin-bottom:10px;
   }
 
   /* ---- About ---- */
@@ -1067,74 +1257,86 @@
       <div class="stat"><strong>4</strong><span>Seasons chased</span></div>
     </div>
 
-    <!-- NEW: Comparison table -->
-    <div class="compare-wrap reveal">
+    <!-- NEW: Comparison table - collapsible on mobile -->
+    <div class="compare-wrap reveal" id="compareWrap">
       <div class="compare-header">
         <h2>Quick Compare — Find Your Next Drive</h2>
-        <span>Destination • Best Season • Trip Type • Drive Style</span>
+        <div class="compare-header-right">
+          <span class="compare-hint">Destination • Best Season • Trip Type • Drive Style</span>
+          <button class="compare-toggle" id="compareToggle" aria-expanded="false" aria-controls="compareBody">
+            <span class="toggle-text">Show 7 routes</span>
+            <span class="toggle-icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4.5L6 8.5L10 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+        </div>
       </div>
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th>Destination</th>
-            <th>Best Season</th>
-            <th>Trip Type</th>
-            <th>Drive Style</th>
-            <th>Link</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Chicago Skyline Run</td>
-            <td><span class="compare-pill">Spring</span></td>
-            <td>City / Long Distance</td>
-            <td>Interstate Highway</td>
-            <td><a class="compare-link" href="https://ani072018.github.io/Boston-Chicago-Boston/" target="_blank" rel="noopener">View guide →</a></td>
-          </tr>
-          <tr>
-            <td>Niagara Falls</td>
-            <td><span class="compare-pill">Winter</span></td>
-            <td>Waterfall / Scenic</td>
-            <td>Scenic Highway</td>
-            <td><a class="compare-link" href="https://ani072018.github.io/Boston-Niagra-Boston/" target="_blank" rel="noopener">View guide →</a></td>
-          </tr>
-          <tr>
-            <td>Great Smoky Mountains</td>
-            <td><span class="compare-pill">Fall</span></td>
-            <td>Fall Foliage / National Park</td>
-            <td>Mountain Roads</td>
-            <td><a class="compare-link" href="https://ani072018.github.io/Boston-Tennessee-Boston/" target="_blank" rel="noopener">View guide →</a></td>
-          </tr>
-          <tr>
-            <td>Lake Placid & Whiteface</td>
-            <td><span class="compare-pill">Fall</span></td>
-            <td>Foliage / Summit Drive</td>
-            <td>Mountain Roads</td>
-            <td><a class="compare-link" href="https://ani072018.github.io/Boston-LakePlacid-Boston/" target="_blank" rel="noopener">View guide →</a></td>
-          </tr>
-          <tr>
-            <td>Macy's Thanksgiving Parade</td>
-            <td><span class="compare-pill">Thanksgiving</span></td>
-            <td>Event / City</td>
-            <td>City Drive</td>
-            <td><a class="compare-link" href="https://ani072018.github.io/Boston-Macys-Parade/" target="_blank" rel="noopener">View guide →</a></td>
-          </tr>
-          <tr>
-            <td>Peddler's Village</td>
-            <td><span class="compare-pill">Holiday</span></td>
-            <td>Christmas Lights / Markets</td>
-            <td>Country Roads</td>
-            <td><a class="compare-link" href="https://ani072018.github.io/Newyork-Peddlers-Village-Boston/" target="_blank" rel="noopener">View guide →</a></td>
-          </tr>
-          <tr>
-            <td>Hersheypark & Lake Tobias</td>
-            <td><span class="compare-pill">Summer</span></td>
-            <td>Family / Theme Park</td>
-            <td>Family Highway</td>
-            <td><a class="compare-link" href="https://ani072018.github.io/Boston-Hershey-Boston/" target="_blank" rel="noopener">View guide →</a></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="compare-body" id="compareBody">
+        <div class="compare-body-inner">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Destination</th>
+                <th>Best Season</th>
+                <th>Trip Type</th>
+                <th>Drive Style</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Chicago Skyline Run</td>
+                <td data-label="Best Season"><span class="compare-pill">Spring</span></td>
+                <td data-label="Trip Type">City / Long Distance</td>
+                <td data-label="Drive Style">Interstate Highway</td>
+                <td><a class="compare-link" href="https://ani072018.github.io/Boston-Chicago-Boston/" target="_blank" rel="noopener">View guide →</a></td>
+              </tr>
+              <tr>
+                <td>Niagara Falls</td>
+                <td data-label="Best Season"><span class="compare-pill">Winter</span></td>
+                <td data-label="Trip Type">Waterfall / Scenic</td>
+                <td data-label="Drive Style">Scenic Highway</td>
+                <td><a class="compare-link" href="https://ani072018.github.io/Boston-Niagra-Boston/" target="_blank" rel="noopener">View guide →</a></td>
+              </tr>
+              <tr>
+                <td>Great Smoky Mountains</td>
+                <td data-label="Best Season"><span class="compare-pill">Fall</span></td>
+                <td data-label="Trip Type">Fall Foliage / National Park</td>
+                <td data-label="Drive Style">Mountain Roads</td>
+                <td><a class="compare-link" href="https://ani072018.github.io/Boston-Tennessee-Boston/" target="_blank" rel="noopener">View guide →</a></td>
+              </tr>
+              <tr>
+                <td>Lake Placid & Whiteface</td>
+                <td data-label="Best Season"><span class="compare-pill">Fall</span></td>
+                <td data-label="Trip Type">Foliage / Summit Drive</td>
+                <td data-label="Drive Style">Mountain Roads</td>
+                <td><a class="compare-link" href="https://ani072018.github.io/Boston-LakePlacid-Boston/" target="_blank" rel="noopener">View guide →</a></td>
+              </tr>
+              <tr>
+                <td>Macy's Thanksgiving Parade</td>
+                <td data-label="Best Season"><span class="compare-pill">Thanksgiving</span></td>
+                <td data-label="Trip Type">Event / City</td>
+                <td data-label="Drive Style">City Drive</td>
+                <td><a class="compare-link" href="https://ani072018.github.io/Boston-Macys-Parade/" target="_blank" rel="noopener">View guide →</a></td>
+              </tr>
+              <tr>
+                <td>Peddler's Village</td>
+                <td data-label="Best Season"><span class="compare-pill">Holiday</span></td>
+                <td data-label="Trip Type">Christmas Lights / Markets</td>
+                <td data-label="Drive Style">Country Roads</td>
+                <td><a class="compare-link" href="https://ani072018.github.io/Newyork-Peddlers-Village-Boston/" target="_blank" rel="noopener">View guide →</a></td>
+              </tr>
+              <tr>
+                <td>Hersheypark & Lake Tobias</td>
+                <td data-label="Best Season"><span class="compare-pill">Summer</span></td>
+                <td data-label="Trip Type">Family / Theme Park</td>
+                <td data-label="Drive Style">Family Highway</td>
+                <td><a class="compare-link" href="https://ani072018.github.io/Boston-Hershey-Boston/" target="_blank" rel="noopener">View guide →</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
     <div class="map-frame">
@@ -1371,25 +1573,67 @@
     </div>
   </section>
 
-  <!-- NEW: FAQ block -->
+  <!-- NEW: FAQ block - attractive collapsible, questions always visible -->
   <section class="faq reveal" id="faq">
     <p class="section-label">Road trip FAQ — quick answers</p>
     <h2>Planning help for your next drive</h2>
-    <div class="faq-item">
-      <h3>What are the best scenic road trips in the USA?</h3>
-      <p>Best scenic road trips include Chicago Skyline Run for long-distance city driving, Great Smoky Mountains and Lake Placid for fall foliage, Niagara Falls for winter waterfall views, Peddler's Village for holiday lights, Macy's Thanksgiving Parade for NYC events, and Hersheypark and Lake Tobias for family theme park adventures. Each guide includes best season, drive style, and full itinerary.</p>
-    </div>
-    <div class="faq-item">
-      <h3>What are the best fall foliage road trips?</h3>
-      <p>Top fall foliage road trips are Great Smoky Mountains in Tennessee for late fall colors down south and Lake Placid and Whiteface Mountain in New York for peak red and gold to the summit. Both guides include exact timing, summit drive details, and stops.</p>
-    </div>
-    <div class="faq-item">
-      <h3>What are the best family road trips with theme parks?</h3>
-      <p>Hersheypark and Lake Tobias in Pennsylvania is ideal for families — roller coasters and chocolate by day, drive-through wildlife safari nearby. Chicago also works for a longer family city trip. Find both under family and theme park guides with kid-friendly timing and ticket tips.</p>
-    </div>
-    <div class="faq-item">
-      <h3>What is the best winter road trip for frozen waterfalls?</h3>
-      <p>Niagara Falls in winter is the best for frozen waterfalls — the falls are partially frozen, powerful, and less crowded. The guide covers how cold it really feels, what stays open, and how to plan the winter route safely.</p>
+    <p class="faq-sub">Tap a question to expand. All guides are linked in the comparison table and cards above.</p>
+    <div class="faq-list">
+      <div class="faq-item active">
+        <button class="faq-question" aria-expanded="true">
+          <span class="faq-question-text">What are the best scenic road trips in the USA?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5V12.5M1.5 7H12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p><span class="faq-badge">🏞️ Scenic • 7 routes</span><br>Best scenic road trips include Chicago Skyline Run for long-distance city driving, Great Smoky Mountains and Lake Placid for fall foliage, Niagara Falls for winter waterfall views, Peddler's Village for holiday lights, Macy's Thanksgiving Parade for events, and Hersheypark and Lake Tobias for family theme park adventures. Each guide includes best season, drive style, and full itinerary with stops.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">What are the best fall foliage road trips?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5V12.5M1.5 7H12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p><span class="faq-badge">🍂 Fall • Peak colors</span><br>Top fall foliage road trips are Great Smoky Mountains for late fall colors down south and Lake Placid & Whiteface Mountain for peak red and gold to the summit. Both guides include exact timing windows, summit drive details, and where to stop for best views.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">What are the best family road trips with theme parks?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5V12.5M1.5 7H12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p><span class="faq-badge">🎢 Family • Theme parks</span><br>Hersheypark & Lake Tobias in Pennsylvania is ideal for families — roller coasters and chocolate by day, drive-through wildlife safari nearby. Chicago also works for a longer family city trip. Find both under family and theme park guides with kid-friendly timing and ticket tips.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">What is the best winter road trip for frozen waterfalls?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5V12.5M1.5 7H12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p><span class="faq-badge">❄️ Winter • Waterfalls</span><br>Niagara Falls in winter is the best for frozen waterfalls — the falls are partially frozen, powerful, and less crowded. The guide covers how cold it really feels, what stays open, and how to plan the winter route safely with stops.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1525,6 +1769,76 @@
   } else {
     revealEls.forEach(el=>el.classList.add('visible'));
   }
+
+  // ---- FAQ accordion - attractive collapsible, questions always visible ----
+  const faqItems = document.querySelectorAll('.faq-item');
+  document.querySelectorAll('.faq-question').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const item = btn.closest('.faq-item');
+      const isActive = item.classList.contains('active');
+      faqItems.forEach(i=>{
+        i.classList.remove('active');
+        i.querySelector('.faq-question').setAttribute('aria-expanded','false');
+      });
+      if(!isActive){
+        item.classList.add('active');
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  // ---- Comparison table - collapsible on mobile ----
+  const compareWrap = document.getElementById('compareWrap');
+  const compareToggle = document.getElementById('compareToggle');
+  const compareBody = document.getElementById('compareBody');
+  
+  function isMobile(){ return window.innerWidth <= 720; }
+
+  function setMobileState(){
+    if(isMobile()){
+      if(!compareWrap.classList.contains('mobile-open')){
+        compareToggle.setAttribute('aria-expanded','false');
+        compareToggle.querySelector('.toggle-text').textContent = 'Show 7 routes';
+      }
+    } else {
+      compareWrap.classList.add('mobile-open');
+      compareToggle.setAttribute('aria-expanded','true');
+      compareToggle.querySelector('.toggle-text').textContent = '7 routes';
+    }
+  }
+
+  // init
+  setMobileState();
+  if(isMobile()){
+    // start collapsed on mobile
+    compareWrap.classList.remove('mobile-open');
+  } else {
+    compareWrap.classList.add('mobile-open');
+  }
+
+  compareToggle.addEventListener('click', ()=>{
+    const isOpen = compareWrap.classList.contains('mobile-open');
+    if(isOpen){
+      compareWrap.classList.remove('mobile-open');
+      compareToggle.setAttribute('aria-expanded','false');
+      compareToggle.querySelector('.toggle-text').textContent = 'Show 7 routes';
+    } else {
+      compareWrap.classList.add('mobile-open');
+      compareToggle.setAttribute('aria-expanded','true');
+      compareToggle.querySelector('.toggle-text').textContent = 'Hide routes';
+      // scroll to table on mobile for better UX
+      if(isMobile()){
+        compareWrap.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    }
+  });
+
+  window.addEventListener('resize', ()=>{
+    setMobileState();
+    if(!isMobile()){
+      compareWrap.classList.add('mobile-open');
+    }
+  });
 </script>
 
 </body>
