@@ -497,6 +497,7 @@
   .card[data-accent="nyc"]{ --accent: #a8324a; }
   .card[data-accent="peddlersvillage"]{ --accent: #c9972e; }
   .card[data-accent="hershey"]{ --accent: #e8482c; }
+  .card[data-accent="vermont"]{ --accent: #2d8a5e; }
   .card:hover, .card:focus-visible{
     transform:translateY(-6px);
     border-color:rgba(200,90,46,0.35);
@@ -1059,7 +1060,8 @@
         { "@id": "https://ani072018.github.io/Boston-LakePlacid-Boston/#trip" },
         { "@id": "https://ani072018.github.io/Boston-Macys-Parade/#trip" },
         { "@id": "https://ani072018.github.io/Newyork-Peddlers-Village-Boston/#trip" },
-        { "@id": "https://ani072018.github.io/Boston-Hershey-Boston/#trip" }
+        { "@id": "https://ani072018.github.io/Boston-Hershey-Boston/#trip" },
+        { "@id": "https://ani072018.github.io/Boston-Vermont-Boston/#trip" }
       ]
     },
     {
@@ -1152,12 +1154,24 @@
       "touristType": "Family road trip"
     },
     {
+      "@type": ["BlogPosting", "TouristTrip"],
+      "@id": "https://ani072018.github.io/Boston-Vermont-Boston/#trip",
+      "headline": "Vermont Fall Loop — Quechee to Burlington via Stowe & Smugglers' Notch",
+      "name": "Vermont Fall Foliage Loop",
+      "url": "https://ani072018.github.io/Boston-Vermont-Boston/",
+      "mainEntityOfPage": "https://ani072018.github.io/Boston-Vermont-Boston/",
+      "datePublished": "2025-10-10",
+      "author": { "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#author" },
+      "touristType": "Fall foliage road trip"
+    },
+    {
       "@type": "ItemList",
       "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#fall-roundup",
       "name": "Best Fall Road Trips",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "url": "https://ani072018.github.io/Boston-Tennessee-Boston/" },
-        { "@type": "ListItem", "position": 2, "url": "https://ani072018.github.io/Boston-LakePlacid-Boston/" }
+        { "@type": "ListItem", "position": 2, "url": "https://ani072018.github.io/Boston-LakePlacid-Boston/" },
+        { "@type": "ListItem", "position": 3, "url": "https://ani072018.github.io/Boston-Vermont-Boston/" }
       ]
     },
     {
@@ -1182,7 +1196,7 @@
       "name": "What are the best scenic road trips in the USA?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Some of the best scenic road trips in the USA include Chicago skyline routes for long-distance city driving, Great Smoky Mountains for fall foliage, Lake Placid and Whiteface Mountain for summit views, Niagara Falls for winter scenery, Peddler's Village for holiday lights, NYC for Thanksgiving parade events, and Hersheypark and Lake Tobias for family theme park adventures. Each guide on Tales From My Suitcase includes itineraries, best season, drive style, and stops."
+        "text": "Some of the best scenic road trips in the USA include Chicago skyline routes for long-distance city driving, Great Smoky Mountains for fall foliage, Lake Placid and Whiteface Mountain for summit views, Niagara Falls for winter scenery, Vermont fall loop through Quechee, Stowe and Smugglers Notch, Peddler's Village for holiday lights, NYC for Thanksgiving parade events, and Hersheypark and Lake Tobias for family theme park adventures. Each guide on Tales From My Suitcase includes itineraries, best season, drive style, and stops."
       }
     },
     {
@@ -1190,7 +1204,7 @@
       "name": "What are the best fall foliage road trips?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Top fall foliage road trips include Great Smoky Mountains in Tennessee for late fall colors down south and Lake Placid and Whiteface Mountain in New York for peak red and gold to the summit. Both are covered with timing tips, summit drive details, and full itineraries in our fall roundup."
+        "text": "Top fall foliage road trips include Great Smoky Mountains in Tennessee for late fall colors down south, Lake Placid and Whiteface Mountain in New York for peak red and gold to the summit, and the Vermont loop - Quechee Gorge, Montpelier, Waterbury, Stowe Gondola, Smugglers Notch VT-108, and Burlington - for early to mid-October peak. All are covered with timing tips, summit drive details, and full itineraries in our fall roundup."
       }
     },
     {
@@ -1207,6 +1221,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Niagara Falls in winter is the best road trip for frozen waterfalls. The falls are partially frozen and roaring, with fewer crowds. Our guide covers what it actually looks like mid-winter, how to plan around the cold, and the full route breakdown with stops."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best fall road trip in Vermont?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Vermont Fall Loop from Boston is ~350 miles, 12-14 hours with stops: Boston 6:30 AM to Quechee 9:15 AM to Montpelier 10:40 AM to Waterbury 12:30 PM for Ben and Jerry's to Stowe 1:20 PM to Smugglers Notch 3 PM to Burlington 5:45 PM. Best window is early to mid-October, VT-108 closes mid-late Oct, no RVs, check 511VT."
       }
     }
   ]
@@ -1243,7 +1265,7 @@
         <div class="origin"><span class="dot"></span> Scenic routes • Seasonal guides • Real itineraries</div>
       </div>
       <div class="postcards">
-        <span class="postcard-tag">Route 07</span>
+        <span class="postcard-tag">Route 08</span>
         <div class="postcard pc1"><img src="https://picsum.photos/400/500?random=1" alt="Macy's Thanksgiving Day Parade balloon" loading="lazy"></div>
         <div class="postcard pc2"><img src="https://picsum.photos/400/500?random=2" alt="Niagara Falls in winter" loading="lazy"></div>
         <div class="postcard pc3"><img src="https://picsum.photos/400/500?random=3" alt="Great Smoky Mountains in fall" loading="lazy"></div>
@@ -1251,20 +1273,20 @@
     </div>
 
     <div class="stats-bar">
-      <div class="stat"><strong>7</strong><span>Trips logged</span></div>
-      <div class="stat"><strong>~3,750</strong><span>Miles driven</span></div>
-      <div class="stat"><strong>10</strong><span>States visited</span></div>
+      <div class="stat"><strong>8</strong><span>Trips logged</span></div>
+      <div class="stat"><strong>~4,100</strong><span>Miles driven</span></div>
+      <div class="stat"><strong>11</strong><span>States visited</span></div>
       <div class="stat"><strong>4</strong><span>Seasons chased</span></div>
     </div>
 
-    <!-- NEW: Comparison table - collapsible on mobile -->
+    <!-- Comparison table - collapsible on mobile -->
     <div class="compare-wrap reveal" id="compareWrap">
       <div class="compare-header">
         <h2>Quick Compare — Find Your Next Drive</h2>
         <div class="compare-header-right">
           <span class="compare-hint">Destination • Best Season • Trip Type • Drive Style</span>
           <button class="compare-toggle" id="compareToggle" aria-expanded="false" aria-controls="compareBody">
-            <span class="toggle-text">Show 7 routes</span>
+            <span class="toggle-text">Show 8 routes</span>
             <span class="toggle-icon" aria-hidden="true">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4.5L6 8.5L10 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
@@ -1333,6 +1355,13 @@
                 <td data-label="Drive Style">Family Highway</td>
                 <td><a class="compare-link" href="https://ani072018.github.io/Boston-Hershey-Boston/" target="_blank" rel="noopener">View guide →</a></td>
               </tr>
+              <tr>
+                <td>Vermont Fall Loop</td>
+                <td data-label="Best Season"><span class="compare-pill">Fall</span></td>
+                <td data-label="Trip Type">Fall Foliage / Covered Bridges</td>
+                <td data-label="Drive Style">Mountain Roads</td>
+                <td><a class="compare-link" href="https://ani072018.github.io/Boston-Vermont-Boston/" target="_blank" rel="noopener">View guide →</a></td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -1340,7 +1369,7 @@
     </div>
 
     <div class="map-frame">
-      <svg viewBox="0 0 1000 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated map showing routes to Chicago, Niagara Falls, Tennessee, Lake Placid, New York City, Peddler's Village, and Hershey Park with a side trip to Lake Tobias">
+      <svg viewBox="0 0 1000 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated map showing routes to Chicago, Niagara Falls, Tennessee, Lake Placid, New York City, Peddler's Village, Hershey Park, Lake Tobias and Vermont Fall Loop">
         <defs>
           <radialGradient id="fieldGlow" cx="30%" cy="30%" r="80%">
             <stop offset="0%" stop-color="#fbf3e5"/>
@@ -1365,6 +1394,7 @@
         <path class="route-path" d="M 705 175 C 750 220, 790 245, 830 260" stroke="#c9972e" stroke-width="2" fill="none" stroke-dasharray="2 7" stroke-linecap="round" opacity="0.7"/>
         <path class="route-path" d="M 830 260 C 780 255, 720 240, 660 210" stroke="#e8482c" stroke-width="2" fill="none" stroke-linecap="round"/>
         <path class="route-path" d="M 660 210 C 645 222, 630 232, 615 240" stroke="#e8482c" stroke-width="2" fill="none" stroke-dasharray="2 7" stroke-linecap="round" opacity="0.75"/>
+        <path class="route-path" d="M 830 260 C 830 200, 835 140, 825 110" stroke="#2d8a5e" stroke-width="2" fill="none" stroke-linecap="round"/>
 
         <circle cx="830" cy="260" r="6" fill="#3c2a1e"/>
         <circle class="pin-pulse" cx="830" cy="260" r="6" fill="none" stroke="#3c2a1e" stroke-width="1.5"/>
@@ -1393,6 +1423,9 @@
 
         <circle cx="615" cy="240" r="5" fill="#4c7a3d"/>
         <text x="600" y="258" fill="#3c2a1e" font-family="Source Sans 3" font-size="11.5" text-anchor="middle">Lake Tobias</text>
+
+        <circle cx="825" cy="110" r="5.5" fill="#2d8a5e"/>
+        <text x="825" y="92" fill="#3c2a1e" font-family="Source Sans 3" font-size="12.5" text-anchor="middle">Vermont</text>
       </svg>
     </div>
   </header>
@@ -1499,6 +1532,20 @@
         </div>
       </a>
 
+      <a class="card reveal" data-accent="vermont" href="https://ani072018.github.io/Boston-Vermont-Boston/" target="_blank" rel="noopener">
+        <div class="card-art">
+          <span class="card-mile-badge">Route 08</span>
+          <img src="https://picsum.photos/640/420?random=18" alt="Vermont fall foliage - Quechee Gorge and Smugglers Notch road trip" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-title">Vermont Fall Loop — Quechee to Burlington via Stowe</span>
+          <span class="card-date">Oct 2025 · covered bridges to Smugglers' Notch</span>
+          <span class="card-cta">Visit site
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+
       <div class="card soon">
         <div class="card-body">
           <span class="card-title">Next route</span>
@@ -1512,6 +1559,14 @@
   <section class="latest reveal" id="latest-from-the-road">
     <p class="section-label">Latest from the road</p>
     <div class="latest-list">
+      <a class="latest-item" href="https://ani072018.github.io/Boston-Vermont-Boston/" target="_blank" rel="noopener">
+        <span class="latest-tag">Route 08 · Oct 2025</span>
+        <span class="latest-body">
+          <h3>Vermont: Quechee Gorge to Burlington in peak fall</h3>
+          <p>~350-mile fall loop through Quechee, Montpelier, Waterbury (Ben & Jerry's), Stowe Gondola, Smugglers' Notch VT-108, and Burlington sunset — timing, closures, and stops. Early to mid-Oct is prime.</p>
+        </span>
+        <span class="latest-read">Read the trip →</span>
+      </a>
       <a class="latest-item" href="https://ani072018.github.io/Boston-Hershey-Boston/" target="_blank" rel="noopener">
         <span class="latest-tag">Route 07 · June 2026</span>
         <span class="latest-body">
@@ -1547,6 +1602,7 @@
         <ul>
           <li><a href="https://ani072018.github.io/Boston-Tennessee-Boston/" target="_blank" rel="noopener">Great Smoky Mountains, TN</a></li>
           <li><a href="https://ani072018.github.io/Boston-LakePlacid-Boston/" target="_blank" rel="noopener">Lake Placid & Whiteface Mountain, NY</a></li>
+          <li><a href="https://ani072018.github.io/Boston-Vermont-Boston/" target="_blank" rel="noopener">Vermont Fall Loop — Quechee to Burlington</a></li>
         </ul>
       </div>
       <div class="roundup-card">
@@ -1566,6 +1622,7 @@
       <div class="roundup-card">
         <h3>Best long-weekend road trips</h3>
         <ul>
+          <li><a href="https://ani072018.github.io/Boston-Vermont-Boston/" target="_blank" rel="noopener">Vermont Fall Loop, VT — 350 miles</a></li>
           <li><a href="https://ani072018.github.io/Boston-Macys-Parade/" target="_blank" rel="noopener">Macy's Thanksgiving Parade, NYC</a></li>
           <li><a href="https://ani072018.github.io/Newyork-Peddlers-Village-Boston/" target="_blank" rel="noopener">NYC & Peddler's Village, PA</a></li>
         </ul>
@@ -1573,7 +1630,7 @@
     </div>
   </section>
 
-  <!-- NEW: FAQ block - attractive collapsible, questions always visible -->
+  <!-- FAQ block - attractive collapsible, questions always visible -->
   <section class="faq reveal" id="faq">
     <p class="section-label">Road trip FAQ — quick answers</p>
     <h2>Planning help for your next drive</h2>
@@ -1588,7 +1645,7 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p><span class="faq-badge">🏞️ Scenic • 7 routes</span><br>Best scenic road trips include Chicago Skyline Run for long-distance city driving, Great Smoky Mountains and Lake Placid for fall foliage, Niagara Falls for winter waterfall views, Peddler's Village for holiday lights, Macy's Thanksgiving Parade for events, and Hersheypark and Lake Tobias for family theme park adventures. Each guide includes best season, drive style, and full itinerary with stops.</p>
+            <p><span class="faq-badge">🏞 Scenic • 8 routes</span><br>Best scenic road trips include Chicago Skyline Run for long-distance city driving, Great Smoky Mountains and Lake Placid for fall foliage, Vermont Fall Loop for covered bridges and Smugglers' Notch, Niagara Falls for winter waterfall views, Peddler's Village for holiday lights, Macy's Thanksgiving Parade for events, and Hersheypark and Lake Tobias for family theme park adventures. Each guide includes best season, drive style, and full itinerary with stops.</p>
           </div>
         </div>
       </div>
@@ -1602,7 +1659,7 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p><span class="faq-badge">🍂 Fall • Peak colors</span><br>Top fall foliage road trips are Great Smoky Mountains for late fall colors down south and Lake Placid & Whiteface Mountain for peak red and gold to the summit. Both guides include exact timing windows, summit drive details, and where to stop for best views.</p>
+            <p><span class="faq-badge">🍂 Fall • Peak colors</span><br>Top fall foliage road trips are Great Smoky Mountains for late fall colors down south, Lake Placid & Whiteface Mountain for peak red and gold to the summit, and Vermont — Quechee Gorge, Montpelier, Waterbury (Ben & Jerry's), Stowe Gondola, Smugglers' Notch VT-108, and Burlington — for early to mid-October peak. All guides include exact timing windows, summit drive details, and where to stop for best views.</p>
           </div>
         </div>
       </div>
@@ -1630,7 +1687,21 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p><span class="faq-badge">❄️ Winter • Waterfalls</span><br>Niagara Falls in winter is the best for frozen waterfalls — the falls are partially frozen, powerful, and less crowded. The guide covers how cold it really feels, what stays open, and how to plan the winter route safely with stops.</p>
+            <p><span class="faq-badge">❄ Winter • Waterfalls</span><br>Niagara Falls in winter is the best for frozen waterfalls — the falls are partially frozen, powerful, and less crowded. The guide covers how cold it really feels, what stays open, and how to plan the winter route safely with stops.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">What is the best fall road trip in Vermont?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5V12.5M1.5 7H12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p><span class="faq-badge">🍁 Vermont • 350 miles</span><br>Early to mid-Oct is prime. Quechee peaks first week of Oct, Montpelier/Waterbury/Stowe/Smugglers' Notch Oct 5-15, Burlington holds till Oct 15-20. ~350 miles, 12-14 hrs with stops. Ben & Jerry's first-come in fall, Stowe Gondola 10am-4:30pm no reservation. VT-108 through the Notch closes mid-late Oct after first snow — check 511VT, no RVs, 20mph hairpins. If closed, take VT-100 via Morrisville.</p>
           </div>
         </div>
       </div>
@@ -1683,6 +1754,7 @@
       <a href="https://ani072018.github.io/Boston-Macys-Parade/" style="color:var(--ink-soft); font-size:13px; text-decoration:none; border-bottom:1px solid var(--line);">NYC Parade</a>
       <a href="https://ani072018.github.io/Newyork-Peddlers-Village-Boston/" style="color:var(--ink-soft); font-size:13px; text-decoration:none; border-bottom:1px solid var(--line);">Peddler's Village</a>
       <a href="https://ani072018.github.io/Boston-Hershey-Boston/" style="color:var(--ink-soft); font-size:13px; text-decoration:none; border-bottom:1px solid var(--line);">Hershey Park</a>
+      <a href="https://ani072018.github.io/Boston-Vermont-Boston/" style="color:var(--ink-soft); font-size:13px; text-decoration:none; border-bottom:1px solid var(--line);">Vermont</a>
     </div>
   </footer>
 
@@ -1798,12 +1870,12 @@
     if(isMobile()){
       if(!compareWrap.classList.contains('mobile-open')){
         compareToggle.setAttribute('aria-expanded','false');
-        compareToggle.querySelector('.toggle-text').textContent = 'Show 7 routes';
+        compareToggle.querySelector('.toggle-text').textContent = 'Show 8 routes';
       }
     } else {
       compareWrap.classList.add('mobile-open');
       compareToggle.setAttribute('aria-expanded','true');
-      compareToggle.querySelector('.toggle-text').textContent = '7 routes';
+      compareToggle.querySelector('.toggle-text').textContent = '8 routes';
     }
   }
 
@@ -1821,7 +1893,7 @@
     if(isOpen){
       compareWrap.classList.remove('mobile-open');
       compareToggle.setAttribute('aria-expanded','false');
-      compareToggle.querySelector('.toggle-text').textContent = 'Show 7 routes';
+      compareToggle.querySelector('.toggle-text').textContent = 'Show 8 routes';
     } else {
       compareWrap.classList.add('mobile-open');
       compareToggle.setAttribute('aria-expanded','true');
