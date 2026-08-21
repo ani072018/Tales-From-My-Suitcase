@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tales From My Suitcase — The Road Journal | Scenic Road Trip Guides & Travel Stories</title>
-<meta name="description" content="Family-friendly road trip itineraries and travel stories from the US Northeast, Midwest, and Appalachians — waterfalls, scenic drives, and real trip planning tips, written in English and Bengali.">
+<title>Tales From My Suitcase — Scenic Road Trip Guides, Seasonal Itineraries & Travel Stories</title>
+<meta name="description" content="Scenic road trip guides with real itineraries, drive times, stops, and travel stories - from fall foliage and winter getaways to family theme parks and long weekend getaways, written in English and Bengali.">
 <meta name="keywords" content="road trip itinerary, scenic drives USA, waterfall road trips, family road trips, Bengali travel blog">
-<meta property="og:title" content="Tales From My Suitcase — The Road Journal">
-<meta property="og:description" content="Real road trip itineraries covering waterfalls, national parks, and scenic drives across the US.">
+<meta property="og:title" content="Tales From My Suitcase — Scenic Road Trip Guides, Seasonal Itineraries & Travel Stories">
+<meta property="og:description" content="Real road trip itineraries covering waterfalls, national parks, scenic drives, and theme parks across the US.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ani072018.github.io/Tales-From-My-Suitcase/">
   <!-- Canonical URL -->
@@ -176,9 +176,9 @@
     display:inline-block;
   }
   .lede{
-    max-width:50ch;
-    font-size:1.15rem;
-    line-height:1.65;
+    max-width:58ch;
+    font-size:1.1rem;
+    line-height:1.7;
     color:var(--ink-soft);
     margin:0;
     transition:color 2.5s ease;
@@ -263,8 +263,82 @@
     .stats-bar .stat:nth-child(2){ border-right:none; }
   }
 
+  /* ---- NEW: Comparison table ---- */
+  .compare-wrap{
+    margin-top:38px;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:var(--card-bg);
+    overflow:hidden;
+    box-shadow:0 1px 2px rgba(60,42,30,0.04);
+  }
+  .compare-header{
+    padding:18px 24px 14px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid var(--line);
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .compare-header h2{
+    margin:0;
+    font-size:1.15rem;
+    font-weight:600;
+  }
+  .compare-header span{
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .compare-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .compare-table th{
+    text-align:left;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:600;
+    padding:12px 18px;
+    border-bottom:1px solid var(--line);
+    background:rgba(239,224,198,0.35);
+  }
+  .compare-table td{
+    padding:13px 18px;
+    border-bottom:1px solid var(--line);
+    vertical-align:middle;
+    color:var(--ink);
+  }
+  .compare-table tr:last-child td{ border-bottom:none; }
+  .compare-table td:first-child{ font-family:'Fraunces', serif; font-weight:600; }
+  .compare-pill{
+    display:inline-block;
+    font-size:11px;
+    padding:3px 8px;
+    border-radius:100px;
+    background:var(--paper-2);
+    color:var(--ink-soft);
+    border:1px solid var(--line);
+  }
+  .compare-link{
+    font-size:13px;
+    font-weight:600;
+    color:var(--rust-2);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+  }
+  .compare-link:hover{ border-color:var(--rust-2); }
+  @media (max-width:720px){
+    .compare-table{ display:block; overflow-x:auto; white-space:nowrap; }
+  }
+
   .map-frame{
-    margin-top:56px;
+    margin-top:36px;
     border:1px solid var(--line);
     border-radius:20px;
     background:linear-gradient(160deg, var(--paper), var(--paper-2));
@@ -366,7 +440,7 @@
   .card-title{
     font-family:'Fraunces', serif;
     font-weight:600;
-    font-size:1.45rem;
+    font-size:1.35rem;
     color:var(--ink);
     line-height:1.15;
   }
@@ -487,6 +561,37 @@
     border-bottom:1px solid var(--line);
   }
   .roundup-card a:hover{ color:var(--rust-2); border-color:var(--rust-2); }
+
+  /* ---- NEW: FAQ ---- */
+  section.faq{
+    margin-top:70px;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:var(--card-bg);
+    padding:28px 28px 10px;
+  }
+  section.faq h2{
+    margin:0 0 22px;
+    font-size:clamp(1.4rem, 2.4vw, 1.8rem);
+  }
+  .faq-item{
+    padding:18px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .faq-item:last-child{ border-bottom:none; }
+  .faq-item h3{
+    margin:0 0 8px;
+    font-size:1.08rem;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .faq-item p{
+    margin:0;
+    font-size:14.5px;
+    line-height:1.65;
+    color:var(--ink-soft);
+    max-width:70ch;
+  }
 
   /* ---- About ---- */
   section.about{
@@ -658,11 +763,6 @@
     bottom:auto;
     right:auto;
   }
-  /* The Substack embed renders tall (~560px of real content) with no way to
-     restyle it directly, so we render it at full size then scale the whole
-     thing down and clip the wrapper to the scaled dimensions. This keeps
-     every element (button, fields, legal text) intact and proportioned,
-     just smaller — instead of cropping or leaving a huge block. */
   .newsletter-embed-scale{
     width:100%;
     height:300px;
@@ -751,14 +851,14 @@
       "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#author",
       "name": "Anirban Mitra",
       "url": "https://ani072018.github.io/Tales-From-My-Suitcase/",
-      "description": "Travel enthusiast and storyteller documenting road trips out of Boston, MA."
+      "description": "Travel enthusiast and storyteller documenting scenic road trips across the US."
     },
     {
       "@type": "Blog",
       "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#blog",
       "name": "Tales From My Suitcase — The Road Journal",
       "url": "https://ani072018.github.io/Tales-From-My-Suitcase/",
-      "description": "Family-friendly road trip itineraries and travel stories from the US Northeast, Midwest, and Appalachians, written in English and Bengali.",
+      "description": "Scenic road trip guides with real itineraries, drive times, stops, and travel stories - from fall foliage and winter getaways to family theme parks and long weekend getaways, written in English and Bengali.",
       "author": { "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#author" },
       "publisher": { "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#author" },
       "inLanguage": "en-US",
@@ -784,158 +884,87 @@
         }
       ]
     },
-
     {
       "@type": ["BlogPosting", "TouristTrip"],
       "@id": "https://ani072018.github.io/Boston-Chicago-Boston/#trip",
-      "headline": "Boston → Chicago → Boston",
-      "name": "Boston to Chicago Road Trip",
+      "headline": "Chicago Skyline Run — Long Distance City Route",
+      "name": "Chicago Skyline Run",
       "url": "https://ani072018.github.io/Boston-Chicago-Boston/",
       "mainEntityOfPage": "https://ani072018.github.io/Boston-Chicago-Boston/",
       "datePublished": "2026-04-01",
       "author": { "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#author" },
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://ani072018.github.io/Tales-From-My-Suitcase/assets/chicago-cover.jpg",
-        "caption": "Chicago skyline"
-      },
-      "itinerary": {
-        "@type": "Place",
-        "name": "Chicago, IL"
-      },
-      "touristType": "Family road trip",
-      "keywords": "Boston to Chicago road trip, Chicago road trip itinerary"
+      "touristType": "City road trip"
     },
     {
       "@type": ["BlogPosting", "TouristTrip"],
       "@id": "https://ani072018.github.io/Boston-Niagra-Boston/#trip",
-      "headline": "Boston → Niagara → Boston",
-      "name": "Boston to Niagara Falls Road Trip",
+      "headline": "Niagara Falls in Winter — Frozen and Roaring",
+      "name": "Niagara Falls Winter Trip",
       "url": "https://ani072018.github.io/Boston-Niagra-Boston/",
       "mainEntityOfPage": "https://ani072018.github.io/Boston-Niagra-Boston/",
       "datePublished": "2025-12-01",
       "author": { "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#author" },
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://ani072018.github.io/Tales-From-My-Suitcase/assets/niagara-cover.jpg",
-        "caption": "Niagara Falls in winter"
-      },
-      "itinerary": {
-        "@type": "Place",
-        "name": "Niagara Falls"
-      },
-      "touristType": "Family road trip",
-      "keywords": "Boston to Niagara Falls road trip, winter Niagara road trip itinerary"
+      "touristType": "Waterfall road trip"
     },
     {
       "@type": ["BlogPosting", "TouristTrip"],
       "@id": "https://ani072018.github.io/Boston-Tennessee-Boston/#trip",
-      "headline": "Boston → Tennessee → Boston",
-      "name": "Boston to Tennessee (Great Smoky Mountains) Road Trip",
+      "headline": "Great Smoky Mountains in Fall — Fall Colors Down South",
+      "name": "Great Smoky Mountains Fall Trip",
       "url": "https://ani072018.github.io/Boston-Tennessee-Boston/",
       "mainEntityOfPage": "https://ani072018.github.io/Boston-Tennessee-Boston/",
       "datePublished": "2025-08-15",
       "author": { "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#author" },
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://ani072018.github.io/Tales-From-My-Suitcase/assets/tennessee-cover.jpg",
-        "caption": "Great Smoky Mountains in fall"
-      },
-      "itinerary": {
-        "@type": "Place",
-        "name": "Great Smoky Mountains, TN"
-      },
-      "touristType": "Family road trip",
-      "keywords": "Boston to Tennessee road trip, Great Smoky Mountains fall road trip"
+      "touristType": "Fall foliage road trip"
     },
     {
       "@type": ["BlogPosting", "TouristTrip"],
       "@id": "https://ani072018.github.io/Boston-LakePlacid-Boston/#trip",
-      "headline": "Boston → Lake Placid → Boston",
-      "name": "Boston to Lake Placid Road Trip",
+      "headline": "Lake Placid & Whiteface Mountain — Red and Gold to the Summit",
+      "name": "Lake Placid Fall Trip",
       "url": "https://ani072018.github.io/Boston-LakePlacid-Boston/",
       "mainEntityOfPage": "https://ani072018.github.io/Boston-LakePlacid-Boston/",
       "datePublished": "2025-10-01",
       "author": { "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#author" },
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://ani072018.github.io/Tales-From-My-Suitcase/assets/lakeplacid-cover.jpg",
-        "caption": "Whiteface Mountain summit in fall"
-      },
-      "itinerary": {
-        "@type": "Place",
-        "name": "Lake Placid, NY"
-      },
-      "touristType": "Family road trip",
-      "keywords": "Boston to Lake Placid road trip, Whiteface Mountain fall foliage"
+      "touristType": "Fall foliage road trip"
     },
     {
       "@type": ["BlogPosting", "TouristTrip"],
       "@id": "https://ani072018.github.io/Boston-Macys-Parade/#trip",
-      "headline": "Boston → Big Balloons (NYC) → Boston",
-      "name": "Boston to Macy's Thanksgiving Day Parade Road Trip",
+      "headline": "Macy's Thanksgiving Day Parade — Big Balloons Over Manhattan",
+      "name": "Macy's Thanksgiving Parade Trip",
       "url": "https://ani072018.github.io/Boston-Macys-Parade/",
       "mainEntityOfPage": "https://ani072018.github.io/Boston-Macys-Parade/",
       "datePublished": "2025-11-27",
       "author": { "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#author" },
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://ani072018.github.io/Tales-From-My-Suitcase/assets/nyc-cover.jpg",
-        "caption": "Macy's Thanksgiving Day Parade balloon over Manhattan"
-      },
-      "itinerary": {
-        "@type": "Place",
-        "name": "New York, NY"
-      },
-      "touristType": "Family road trip",
-      "keywords": "Boston to NYC road trip, Macy's Thanksgiving Day Parade road trip"
+      "touristType": "Event road trip"
     },
     {
       "@type": ["BlogPosting", "TouristTrip"],
       "@id": "https://ani072018.github.io/Newyork-Peddlers-Village-Boston/#trip",
-      "headline": "Boston → NYC → Peddler's Village → Boston",
-      "name": "Boston to NYC and Peddler's Village Road Trip",
+      "headline": "Peddler's Village Christmas Lights — Lights and Holiday Markets",
+      "name": "Peddler's Village Holiday Trip",
       "url": "https://ani072018.github.io/Newyork-Peddlers-Village-Boston/",
       "mainEntityOfPage": "https://ani072018.github.io/Newyork-Peddlers-Village-Boston/",
       "datePublished": "2025-11-28",
       "author": { "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#author" },
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://ani072018.github.io/Tales-From-My-Suitcase/assets/peddlersvillage-cover.jpg",
-        "caption": "Peddler's Village lit up for Christmas"
-      },
-      "itinerary": {
-        "@type": "Place",
-        "name": "Peddler's Village, PA"
-      },
-      "touristType": "Family road trip",
-      "keywords": "Boston to Peddler's Village road trip, NYC Christmas lights road trip"
+      "touristType": "Holiday road trip"
     },
     {
       "@type": ["BlogPosting", "TouristTrip"],
       "@id": "https://ani072018.github.io/Boston-Hershey-Boston/#trip",
-      "headline": "Boston → Hershey → Lake Tobias → Boston",
-      "name": "Boston to Hershey Park Road Trip",
+      "headline": "Hersheypark & Lake Tobias — Coasters, Chocolate & Wildlife Safari",
+      "name": "Hersheypark Family Trip",
       "url": "https://ani072018.github.io/Boston-Hershey-Boston/",
       "mainEntityOfPage": "https://ani072018.github.io/Boston-Hershey-Boston/",
       "datePublished": "2026-06-01",
       "author": { "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#author" },
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://ani072018.github.io/Tales-From-My-Suitcase/assets/hershey-cover.jpg",
-        "caption": "Hersheypark roller coaster at dusk"
-      },
-      "itinerary": {
-        "@type": "Place",
-        "name": "Hershey, PA"
-      },
-      "touristType": "Family road trip",
-      "keywords": "Boston to Hershey Park road trip, Hershey Lake Tobias family road trip"
+      "touristType": "Family road trip"
     },
     {
       "@type": "ItemList",
       "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#fall-roundup",
-      "name": "Best Fall Road Trips from Boston",
+      "name": "Best Fall Road Trips",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "url": "https://ani072018.github.io/Boston-Tennessee-Boston/" },
         { "@type": "ListItem", "position": 2, "url": "https://ani072018.github.io/Boston-LakePlacid-Boston/" }
@@ -944,11 +973,51 @@
     {
       "@type": "ItemList",
       "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#winter-roundup",
-      "name": "Best Winter Road Trips from Boston",
+      "name": "Best Winter Road Trips",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "url": "https://ani072018.github.io/Boston-Niagra-Boston/" },
         { "@type": "ListItem", "position": 2, "url": "https://ani072018.github.io/Newyork-Peddlers-Village-Boston/" }
       ]
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the best scenic road trips in the USA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some of the best scenic road trips in the USA include Chicago skyline routes for long-distance city driving, Great Smoky Mountains for fall foliage, Lake Placid and Whiteface Mountain for summit views, Niagara Falls for winter scenery, Peddler's Village for holiday lights, NYC for Thanksgiving parade events, and Hersheypark and Lake Tobias for family theme park adventures. Each guide on Tales From My Suitcase includes itineraries, best season, drive style, and stops."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the best fall foliage road trips?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Top fall foliage road trips include Great Smoky Mountains in Tennessee for late fall colors down south and Lake Placid and Whiteface Mountain in New York for peak red and gold to the summit. Both are covered with timing tips, summit drive details, and full itineraries in our fall roundup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the best family road trips with theme parks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Best family road trips with theme parks include Hersheypark and Lake Tobias in Pennsylvania, pairing roller coasters and chocolate with a drive-through wildlife safari, and Chicago for a long-distance city theme park mix. These are listed under family and theme park guides with practical tips for kids and timing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best winter road trip for frozen waterfalls?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Niagara Falls in winter is the best road trip for frozen waterfalls. The falls are partially frozen and roaring, with fewer crowds. Our guide covers what it actually looks like mid-winter, how to plan around the cold, and the full route breakdown with stops."
+      }
     }
   ]
 }
@@ -980,8 +1049,8 @@
       <div>
         <p class="eyebrow">Field notes from the highway</p>
         <h1>The Road<br><em>Journal</em></h1>
-        <p class="lede">A running record of drives out of Boston — chocolate towns, thundering falls, smoky southern hills, gold-lit mountain summits, and a pre-dawn dash to a parade. Each trip has its own site; this is the map that ties them together.</p>
-        <div class="origin"><span class="dot"></span> Home base: Boston, MA</div>
+        <p class="lede">Tales From My Suitcase is a collection of scenic road trip guides and travel stories with real, tested itineraries you can actually follow. Every route includes the best season to visit, total drive times, key stops, and practical planning tips from the road. Explore fall foliage drives through national parks and mountain summits, winter escapes to frozen waterfalls and Christmas light villages, family-friendly theme park routes pairing coasters with wildlife safaris, and long-weekend city getaways with parades and skyline views. This journal is the master map that ties all the individual trip sites together — browse by season, trip type, and driving style to find your next adventure.</p>
+        <div class="origin"><span class="dot"></span> Scenic routes • Seasonal guides • Real itineraries</div>
       </div>
       <div class="postcards">
         <span class="postcard-tag">Route 07</span>
@@ -998,8 +1067,78 @@
       <div class="stat"><strong>4</strong><span>Seasons chased</span></div>
     </div>
 
+    <!-- NEW: Comparison table -->
+    <div class="compare-wrap reveal">
+      <div class="compare-header">
+        <h2>Quick Compare — Find Your Next Drive</h2>
+        <span>Destination • Best Season • Trip Type • Drive Style</span>
+      </div>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Destination</th>
+            <th>Best Season</th>
+            <th>Trip Type</th>
+            <th>Drive Style</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Chicago Skyline Run</td>
+            <td><span class="compare-pill">Spring</span></td>
+            <td>City / Long Distance</td>
+            <td>Interstate Highway</td>
+            <td><a class="compare-link" href="https://ani072018.github.io/Boston-Chicago-Boston/" target="_blank" rel="noopener">View guide →</a></td>
+          </tr>
+          <tr>
+            <td>Niagara Falls</td>
+            <td><span class="compare-pill">Winter</span></td>
+            <td>Waterfall / Scenic</td>
+            <td>Scenic Highway</td>
+            <td><a class="compare-link" href="https://ani072018.github.io/Boston-Niagra-Boston/" target="_blank" rel="noopener">View guide →</a></td>
+          </tr>
+          <tr>
+            <td>Great Smoky Mountains</td>
+            <td><span class="compare-pill">Fall</span></td>
+            <td>Fall Foliage / National Park</td>
+            <td>Mountain Roads</td>
+            <td><a class="compare-link" href="https://ani072018.github.io/Boston-Tennessee-Boston/" target="_blank" rel="noopener">View guide →</a></td>
+          </tr>
+          <tr>
+            <td>Lake Placid & Whiteface</td>
+            <td><span class="compare-pill">Fall</span></td>
+            <td>Foliage / Summit Drive</td>
+            <td>Mountain Roads</td>
+            <td><a class="compare-link" href="https://ani072018.github.io/Boston-LakePlacid-Boston/" target="_blank" rel="noopener">View guide →</a></td>
+          </tr>
+          <tr>
+            <td>Macy's Thanksgiving Parade</td>
+            <td><span class="compare-pill">Thanksgiving</span></td>
+            <td>Event / City</td>
+            <td>City Drive</td>
+            <td><a class="compare-link" href="https://ani072018.github.io/Boston-Macys-Parade/" target="_blank" rel="noopener">View guide →</a></td>
+          </tr>
+          <tr>
+            <td>Peddler's Village</td>
+            <td><span class="compare-pill">Holiday</span></td>
+            <td>Christmas Lights / Markets</td>
+            <td>Country Roads</td>
+            <td><a class="compare-link" href="https://ani072018.github.io/Newyork-Peddlers-Village-Boston/" target="_blank" rel="noopener">View guide →</a></td>
+          </tr>
+          <tr>
+            <td>Hersheypark & Lake Tobias</td>
+            <td><span class="compare-pill">Summer</span></td>
+            <td>Family / Theme Park</td>
+            <td>Family Highway</td>
+            <td><a class="compare-link" href="https://ani072018.github.io/Boston-Hershey-Boston/" target="_blank" rel="noopener">View guide →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <div class="map-frame">
-      <svg viewBox="0 0 1000 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated map showing routes from Boston to Chicago, Niagara Falls, Tennessee, Lake Placid, New York City, Peddler's Village, and Hershey Park with a side trip to Lake Tobias">
+      <svg viewBox="0 0 1000 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated map showing routes to Chicago, Niagara Falls, Tennessee, Lake Placid, New York City, Peddler's Village, and Hershey Park with a side trip to Lake Tobias">
         <defs>
           <radialGradient id="fieldGlow" cx="30%" cy="30%" r="80%">
             <stop offset="0%" stop-color="#fbf3e5"/>
@@ -1027,7 +1166,7 @@
 
         <circle cx="830" cy="260" r="6" fill="#3c2a1e"/>
         <circle class="pin-pulse" cx="830" cy="260" r="6" fill="none" stroke="#3c2a1e" stroke-width="1.5"/>
-        <text x="845" y="264" fill="#3c2a1e" font-family="Source Sans 3" font-size="13" font-weight="600">Boston</text>
+        <text x="845" y="264" fill="#3c2a1e" font-family="Source Sans 3" font-size="13" font-weight="600">Start</text>
 
         <circle cx="300" cy="110" r="5.5" fill="#c85a2e"/>
         <text x="270" y="95" fill="#3c2a1e" font-family="Source Sans 3" font-size="12.5" text-anchor="middle">Chicago</text>
@@ -1063,10 +1202,10 @@
       <a class="card reveal" data-accent="chicago" href="https://ani072018.github.io/Boston-Chicago-Boston/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 01</span>
-          <img src="https://picsum.photos/640/420?random=11" alt="Chicago skyline" loading="lazy">
+          <img src="https://picsum.photos/640/420?random=11" alt="Chicago skyline - long distance city road trip" loading="lazy">
         </div>
         <div class="card-body">
-          <span class="card-title">Boston → Chicago → Boston</span>
+          <span class="card-title">Chicago Skyline Run — Long Distance City Route</span>
           <span class="card-date">April 2026 · the long westward run</span>
           <span class="card-cta">Visit site
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1077,10 +1216,10 @@
       <a class="card reveal" data-accent="niagara" href="https://ani072018.github.io/Boston-Niagra-Boston/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 02</span>
-          <img src="https://picsum.photos/640/420?random=12" alt="Niagara Falls in winter" loading="lazy">
+          <img src="https://picsum.photos/640/420?random=12" alt="Niagara Falls in winter - frozen waterfall road trip" loading="lazy">
         </div>
         <div class="card-body">
-          <span class="card-title">Boston → Niagara → Boston</span>
+          <span class="card-title">Niagara Falls in Winter — Frozen and Roaring</span>
           <span class="card-date">Winter 2025 · falls, frozen and roaring</span>
           <span class="card-cta">Visit site
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1091,10 +1230,10 @@
       <a class="card reveal" data-accent="tennessee" href="https://ani072018.github.io/Boston-Tennessee-Boston/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 03</span>
-          <img src="https://picsum.photos/640/420?random=13" alt="Great Smoky Mountains in fall" loading="lazy">
+          <img src="https://picsum.photos/640/420?random=13" alt="Great Smoky Mountains in fall - fall foliage road trip" loading="lazy">
         </div>
         <div class="card-body">
-          <span class="card-title">Boston → Tennessee → Boston</span>
+          <span class="card-title">Great Smoky Mountains in Fall — Fall Colors Down South</span>
           <span class="card-date">Aug – Sep 2025 · fall colors down south</span>
           <span class="card-cta">Visit site
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1105,10 +1244,10 @@
       <a class="card reveal" data-accent="laceplacid" href="https://ani072018.github.io/Boston-LakePlacid-Boston/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 04</span>
-          <img src="https://picsum.photos/640/420?random=14" alt="Whiteface Mountain summit in fall" loading="lazy">
+          <img src="https://picsum.photos/640/420?random=14" alt="Whiteface Mountain summit in fall - foliage road trip" loading="lazy">
         </div>
         <div class="card-body">
-          <span class="card-title">Boston → Lake Placid → Boston</span>
+          <span class="card-title">Lake Placid & Whiteface Mountain — Red and Gold to the Summit</span>
           <span class="card-date">Oct 2025 · red and gold to the summit</span>
           <span class="card-cta">Visit site
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1122,7 +1261,7 @@
           <img src="https://picsum.photos/640/420?random=15" alt="Macy's Thanksgiving Day Parade balloon over Manhattan" loading="lazy">
         </div>
         <div class="card-body">
-          <span class="card-title">Boston → Big Balloons (NYC) → Boston</span>
+          <span class="card-title">Macy's Thanksgiving Day Parade — Big Balloons Over Manhattan</span>
           <span class="card-date">Thanksgiving 2025 · a 3 AM dash to the parade</span>
           <span class="card-cta">Visit site
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1133,10 +1272,10 @@
       <a class="card reveal" data-accent="peddlersvillage" href="https://ani072018.github.io/Newyork-Peddlers-Village-Boston/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 06</span>
-          <img src="https://picsum.photos/640/420?random=16" alt="Peddler's Village lit up for Christmas" loading="lazy">
+          <img src="https://picsum.photos/640/420?random=16" alt="Peddler's Village lit up for Christmas - holiday lights road trip" loading="lazy">
         </div>
         <div class="card-body">
-          <span class="card-title">Boston → NYC → Peddler's Village → Boston</span>
+          <span class="card-title">Peddler's Village Christmas Lights — Lights and Holiday Markets</span>
           <span class="card-date">Thanksgiving 2025 · balloons by day, lights by night</span>
           <span class="card-cta">Visit site
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1147,10 +1286,10 @@
       <a class="card reveal" data-accent="hershey" href="https://ani072018.github.io/Boston-Hershey-Boston/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 07</span>
-          <img src="https://picsum.photos/640/420?random=17" alt="Hersheypark roller coaster at dusk" loading="lazy">
+          <img src="https://picsum.photos/640/420?random=17" alt="Hersheypark roller coaster at dusk - family theme park road trip" loading="lazy">
         </div>
         <div class="card-body">
-          <span class="card-title">Boston → Hershey → Lake Tobias → Boston</span>
+          <span class="card-title">Hersheypark & Lake Tobias — Coasters, Chocolate & Wildlife Safari</span>
           <span class="card-date">June 2026 · coasters, chocolate & a wildlife safari</span>
           <span class="card-cta">Visit site
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1174,7 +1313,7 @@
       <a class="latest-item" href="https://ani072018.github.io/Boston-Hershey-Boston/" target="_blank" rel="noopener">
         <span class="latest-tag">Route 07 · June 2026</span>
         <span class="latest-body">
-          <h3>Boston to Hershey Park: coasters, chocolate & a wildlife safari</h3>
+          <h3>Hersheypark: coasters, chocolate & a wildlife safari</h3>
           <p>A summer run through Pennsylvania Dutch Country, pairing a day at Hersheypark with a drive-through safari at Lake Tobias — full itinerary, drive times, and stops.</p>
         </span>
         <span class="latest-read">Read the trip →</span>
@@ -1182,16 +1321,16 @@
       <a class="latest-item" href="https://ani072018.github.io/Boston-LakePlacid-Boston/" target="_blank" rel="noopener">
         <span class="latest-tag">Route 04 · October 2025</span>
         <span class="latest-body">
-          <h3>Boston to Lake Placid: red and gold to the summit</h3>
-          <p>Peak fall foliage in the Adirondacks, a drive to the top of Whiteface Mountain, and the practical details for timing a leaf-peeping road trip out of Boston.</p>
+          <h3>Lake Placid: red and gold to the summit</h3>
+          <p>Peak fall foliage in the Adirondacks, a drive to the top of Whiteface Mountain, and the practical details for timing a leaf-peeping road trip.</p>
         </span>
         <span class="latest-read">Read the trip →</span>
       </a>
       <a class="latest-item" href="https://ani072018.github.io/Boston-Niagra-Boston/" target="_blank" rel="noopener">
         <span class="latest-tag">Route 02 · Winter 2025</span>
         <span class="latest-body">
-          <h3>Boston to Niagara Falls, frozen and roaring</h3>
-          <p>What the falls actually look like mid-winter, how to plan around the cold, and a full route breakdown from Boston.</p>
+          <h3>Niagara Falls, frozen and roaring</h3>
+          <p>What the falls actually look like mid-winter, how to plan around the cold, and a full route breakdown with stops.</p>
         </span>
         <span class="latest-read">Read the trip →</span>
       </a>
@@ -1202,14 +1341,14 @@
     <p class="section-label">Road trip guides by season</p>
     <div class="roundup-grid">
       <div class="roundup-card">
-        <h3>Best fall road trips from Boston</h3>
+        <h3>Best fall road trips</h3>
         <ul>
           <li><a href="https://ani072018.github.io/Boston-Tennessee-Boston/" target="_blank" rel="noopener">Great Smoky Mountains, TN</a></li>
           <li><a href="https://ani072018.github.io/Boston-LakePlacid-Boston/" target="_blank" rel="noopener">Lake Placid & Whiteface Mountain, NY</a></li>
         </ul>
       </div>
       <div class="roundup-card">
-        <h3>Best winter road trips from Boston</h3>
+        <h3>Best winter road trips</h3>
         <ul>
           <li><a href="https://ani072018.github.io/Boston-Niagra-Boston/" target="_blank" rel="noopener">Niagara Falls, NY</a></li>
           <li><a href="https://ani072018.github.io/Newyork-Peddlers-Village-Boston/" target="_blank" rel="noopener">NYC & Peddler's Village, PA</a></li>
@@ -1232,6 +1371,28 @@
     </div>
   </section>
 
+  <!-- NEW: FAQ block -->
+  <section class="faq reveal" id="faq">
+    <p class="section-label">Road trip FAQ — quick answers</p>
+    <h2>Planning help for your next drive</h2>
+    <div class="faq-item">
+      <h3>What are the best scenic road trips in the USA?</h3>
+      <p>Best scenic road trips include Chicago Skyline Run for long-distance city driving, Great Smoky Mountains and Lake Placid for fall foliage, Niagara Falls for winter waterfall views, Peddler's Village for holiday lights, Macy's Thanksgiving Parade for NYC events, and Hersheypark and Lake Tobias for family theme park adventures. Each guide includes best season, drive style, and full itinerary.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What are the best fall foliage road trips?</h3>
+      <p>Top fall foliage road trips are Great Smoky Mountains in Tennessee for late fall colors down south and Lake Placid and Whiteface Mountain in New York for peak red and gold to the summit. Both guides include exact timing, summit drive details, and stops.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What are the best family road trips with theme parks?</h3>
+      <p>Hersheypark and Lake Tobias in Pennsylvania is ideal for families — roller coasters and chocolate by day, drive-through wildlife safari nearby. Chicago also works for a longer family city trip. Find both under family and theme park guides with kid-friendly timing and ticket tips.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the best winter road trip for frozen waterfalls?</h3>
+      <p>Niagara Falls in winter is the best for frozen waterfalls — the falls are partially frozen, powerful, and less crowded. The guide covers how cold it really feels, what stays open, and how to plan the winter route safely.</p>
+    </div>
+  </section>
+
   <section class="about" id="about">
     <div class="about-avatar"><span>AM</span></div>
     <div class="about-copy">
@@ -1250,7 +1411,7 @@
       <ul class="newsletter-points">
         <li>New road trips as they get logged</li>
         <li>Real itineraries, not just highlight reels</li>
-        <li>Written from the road, out of Boston</li>
+        <li>Written from the road, with real planning tips</li>
       </ul>
     </div>
     <div class="newsletter-embed-frame">
@@ -1267,7 +1428,7 @@
 
   <footer>
     <div>
-      <p class="signature" style="margin:0 0 6px 0;">Tales From My Suitcase — safe travels, always back to Boston</p>
+      <p class="signature" style="margin:0 0 6px 0;">Tales From My Suitcase — safe travels, one suitcase at a time</p>
       <p>Updated as new trips wrap up.</p>
     </div>
     <div style="display:flex; gap:22px; flex-wrap:wrap;">
@@ -1326,11 +1487,7 @@
     const span = upper[0] - lower[0];
     const rawT = span === 0 ? 0 : (hourFloat - lower[0]) / span;
 
-    // Only blend smoothly between adjacent stops that share the same light/dark
-    // family (checked via ink lightness). Crossing from light to dark (or back)
-    // blends two very different hues and produces a muddy, low-contrast color,
-    // so snap instantly at that boundary instead.
-    const aIsDark = hexToRgb(lower[1].ink).reduce((s,v)=>s+v,0) > 400; // light ink = dark theme
+    const aIsDark = hexToRgb(lower[1].ink).reduce((s,v)=>s+v,0) > 400;
     const bIsDark = hexToRgb(upper[1].ink).reduce((s,v)=>s+v,0) > 400;
     const t = aIsDark === bIsDark ? rawT : (rawT < 0.5 ? 0 : 1);
 
