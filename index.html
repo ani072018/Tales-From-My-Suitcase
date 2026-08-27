@@ -10,19 +10,14 @@
 <meta property="og:description" content="Real road trip itineraries covering waterfalls, national parks, scenic drives, and theme parks across the US.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ani072018.github.io/Tales-From-My-Suitcase/">
-  <!-- Canonical URL -->
 <link rel="canonical" href="https://ani072018.github.io/Tales-From-My-Suitcase/">
-
-<!-- Open Graph -->
 <meta property="og:site_name" content="Tales From My Suitcase">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://ani072018.github.io/Tales-From-My-Suitcase/assets/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Tales From My Suitcase — road trip guides and travel stories">
-
 <link rel="icon" type="image/png" href="/images/Branding.png">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -52,7 +47,6 @@
     transition:background-color 2.5s ease, color 2.5s ease;
   }
   h1,h2,h3,.display{ font-family:'Fraunces', serif; letter-spacing:-0.01em; transition:color 2.5s ease; }
-
   body::before{
     content:"";
     position:fixed;
@@ -63,7 +57,6 @@
     mix-blend-mode:multiply;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
-
   .sky-tint{
     position:fixed;
     inset:0;
@@ -72,10 +65,7 @@
     opacity:0;
     transition:opacity 3s ease, background 3s ease;
   }
-
   .wrap{ position:relative; z-index:1; max-width:1040px; margin:0 auto; padding:0 28px; }
-
-  /* ---- Brand bar ---- */
   .brand-bar{
     display:flex;
     align-items:center;
@@ -138,7 +128,6 @@
   @media (max-width:640px){
     .brand-bar-links{ display:none; }
   }
-
   header.hero{ padding:56px 0 20px; }
   .hero-grid{
     display:grid;
@@ -194,7 +183,6 @@
     background:var(--teal);
     box-shadow:0 0 0 5px rgba(63,110,100,0.16);
   }
-
   .postcards{
     position:relative;
     height:340px;
@@ -226,7 +214,6 @@
     transform:rotate(4deg);
     box-shadow:0 10px 20px -10px rgba(60,42,30,0.5);
   }
-
   .stats-bar{
     margin-top:44px;
     display:grid;
@@ -262,8 +249,6 @@
     .stats-bar{ grid-template-columns:repeat(2, 1fr); row-gap:20px; }
     .stats-bar .stat:nth-child(2){ border-right:none; }
   }
-
-  /* ---- NEW: Comparison table ---- */
   .compare-wrap{
     margin-top:38px;
     border:1px solid var(--line);
@@ -374,13 +359,9 @@
     border-bottom:1px solid var(--line);
   }
   .compare-link:hover{ border-color:var(--rust-2); }
-
-  /* Desktop: always visible */
   .compare-body{
     display:block;
   }
-
-  /* Mobile: attractive card list + collapsible */
   @media (max-width:720px){
     .compare-toggle{ display:inline-flex; }
     .compare-header span.compare-hint{ display:none; }
@@ -443,7 +424,6 @@
     }
     .compare-table tr td:last-child:before{ display:none; }
   }
-
   .map-frame{
     margin-top:36px;
     border:1px solid var(--line);
@@ -458,7 +438,6 @@
   @keyframes dash{ to { stroke-dashoffset:-320; } }
   .pin-pulse{ animation: pulse 2.6s ease-in-out infinite; transform-origin:center; }
   @keyframes pulse{ 0%,100%{ transform:scale(1); opacity:1; } 50%{ transform:scale(1.35); opacity:0.5; } }
-
   section.routes{ padding:78px 0 40px; }
   .section-label{
     font-size:13px; letter-spacing:0.16em; text-transform:uppercase;
@@ -466,9 +445,7 @@
     display:flex; align-items:center; gap:14px;
   }
   .section-label::after{ content:""; flex:1; height:1px; background:var(--line); }
-
   .cards{ display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:22px; }
-
   .card{
     position:relative;
     border-radius:18px;
@@ -498,13 +475,13 @@
   .card[data-accent="peddlersvillage"]{ --accent: #c9972e; }
   .card[data-accent="hershey"]{ --accent: #e8482c; }
   .card[data-accent="vermont"]{ --accent: #2d8a5e; }
+  .card[data-accent="kancamagus"]{ --accent: #d95a1a; }
   .card:hover, .card:focus-visible{
     transform:translateY(-6px);
     border-color:rgba(200,90,46,0.35);
     box-shadow:0 24px 46px -22px rgba(60,42,30,0.35);
   }
   .card:focus-visible{ outline:2px solid var(--gold); outline-offset:2px; }
-
   .card-art{
     height:170px;
     position:relative;
@@ -537,7 +514,6 @@
     padding:5px 10px;
     border-radius:100px;
   }
-
   .card-body{
     padding:22px 24px 26px;
     display:flex;
@@ -565,7 +541,6 @@
   }
   .card-cta svg{ transition:transform 0.3s ease; }
   .card:hover .card-cta svg{ transform:translateX(5px); }
-
   .card.soon{
     background:transparent;
     border-style:dashed;
@@ -575,7 +550,6 @@
   .card.soon:hover{ transform:none; box-shadow:none; border-color:var(--line); }
   .card.soon .card-body{ justify-content:center; min-height:236px; }
   .card.soon .card-title{ color:var(--ink-soft); }
-
   .reveal{
     opacity:0;
     transform:translateY(22px);
@@ -585,8 +559,6 @@
     opacity:1;
     transform:translateY(0);
   }
-
-  /* ---- Latest from the road ---- */
   section.latest{ margin-top:74px; }
   .latest-list{
     display:flex;
@@ -634,8 +606,6 @@
     color:var(--rust-2);
     white-space:nowrap;
   }
-
-  /* ---- Road trip guides by season ---- */
   section.roundup{ margin-top:70px; }
   .roundup-grid{
     display:grid;
@@ -669,8 +639,6 @@
     border-bottom:1px solid var(--line);
   }
   .roundup-card a:hover{ color:var(--rust-2); border-color:var(--rust-2); }
-
-  /* ---- NEW: FAQ - attractive collapsible ---- */
   section.faq{
     margin-top:70px;
   }
@@ -783,8 +751,6 @@
     border-radius:100px;
     margin-bottom:10px;
   }
-
-  /* ---- About ---- */
   section.about{
     margin-top:70px;
     display:grid;
@@ -857,8 +823,6 @@
     font-size:0.95rem;
     color:var(--rust-2);
   }
-
-  /* ---- Newsletter ---- */
   section.newsletter{
     margin-top:64px;
     position:relative;
@@ -973,7 +937,6 @@
     section.newsletter{ grid-template-columns:1fr; padding:40px 26px; }
     .newsletter-embed-frame{ max-width:420px; margin-left:auto; margin-right:auto; }
   }
-
   footer{
     padding:60px 0 90px;
     border-top:1px solid var(--line);
@@ -991,12 +954,10 @@
     color:var(--rust-2);
     font-size:14.5px;
   }
-
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     .route-path, .pin-pulse, .card, .card-cta svg, .card-art img, .reveal{ animation:none; transition:none; opacity:1; transform:none; }
   }
-
   .corner-logo{
     position:fixed;
     bottom:18px;
@@ -1013,26 +974,22 @@
     display:block;
   }
 </style>
-  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SDEWVST892"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-SDEWVST892');
 </script>
-  <meta name="google-site-verification" content="w8P4eyypZ-8FRswBDn25XdWojPo8KInRJkbCTbcg92A" />
-  <!-- Google tag (gtag.js) -->
+<meta name="google-site-verification" content="w8P4eyypZ-8FRswBDn25XdWojPo8KInRJkbCTbcg92A" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CZHGKSJCFF"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-CZHGKSJCFF');
 </script>
-  <meta name="p:domain_verify" content="69a802757cc22f53cff980b77e252f0f"/>
+<meta name="p:domain_verify" content="69a802757cc22f53cff980b77e252f0f"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1061,7 +1018,8 @@
         { "@id": "https://ani072018.github.io/Boston-Macys-Parade/#trip" },
         { "@id": "https://ani072018.github.io/Newyork-Peddlers-Village-Boston/#trip" },
         { "@id": "https://ani072018.github.io/Boston-Hershey-Boston/#trip" },
-        { "@id": "https://ani072018.github.io/Boston-Vermont-Boston/#trip" }
+        { "@id": "https://ani072018.github.io/Boston-Vermont-Boston/#trip" },
+        { "@id": "https://ani072018.github.io/Boston-Kancamagus-Boston/#trip" }
       ]
     },
     {
@@ -1165,13 +1123,25 @@
       "touristType": "Fall foliage road trip"
     },
     {
+      "@type": ["BlogPosting", "TouristTrip"],
+      "@id": "https://ani072018.github.io/Boston-Kancamagus-Boston/#trip",
+      "headline": "Kancamagus Highway — New Hampshire's Fall Crown, Boston to White Mountains",
+      "name": "Kancamagus Highway Fall Drive",
+      "url": "https://ani072018.github.io/Boston-Kancamagus-Boston/",
+      "mainEntityOfPage": "https://ani072018.github.io/Boston-Kancamagus-Boston/",
+      "datePublished": "2025-10-05",
+      "author": { "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#author" },
+      "touristType": "Fall foliage scenic byway"
+    },
+    {
       "@type": "ItemList",
       "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#fall-roundup",
       "name": "Best Fall Road Trips",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "url": "https://ani072018.github.io/Boston-Tennessee-Boston/" },
         { "@type": "ListItem", "position": 2, "url": "https://ani072018.github.io/Boston-LakePlacid-Boston/" },
-        { "@type": "ListItem", "position": 3, "url": "https://ani072018.github.io/Boston-Vermont-Boston/" }
+        { "@type": "ListItem", "position": 3, "url": "https://ani072018.github.io/Boston-Vermont-Boston/" },
+        { "@type": "ListItem", "position": 4, "url": "https://ani072018.github.io/Boston-Kancamagus-Boston/" }
       ]
     },
     {
@@ -1196,7 +1166,7 @@
       "name": "What are the best scenic road trips in the USA?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Some of the best scenic road trips in the USA include Chicago skyline routes for long-distance city driving, Great Smoky Mountains for fall foliage, Lake Placid and Whiteface Mountain for summit views, Niagara Falls for winter scenery, Vermont fall loop through Quechee, Stowe and Smugglers Notch, Peddler's Village for holiday lights, NYC for Thanksgiving parade events, and Hersheypark and Lake Tobias for family theme park adventures. Each guide on Tales From My Suitcase includes itineraries, best season, drive style, and stops."
+        "text": "Some of the best scenic road trips in the USA include Chicago skyline routes for long-distance city driving, Great Smoky Mountains for fall foliage, Lake Placid and Whiteface Mountain for summit views, Niagara Falls for winter scenery, Vermont fall loop through Quechee, Stowe and Smugglers Notch, Kancamagus Highway for 34 miles of uninterrupted White Mountain fall color, Peddler's Village for holiday lights, NYC for Thanksgiving parade events, and Hersheypark and Lake Tobias for family theme park adventures. Each guide on Tales From My Suitcase includes itineraries, best season, drive style, and stops."
       }
     },
     {
@@ -1204,7 +1174,7 @@
       "name": "What are the best fall foliage road trips?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Top fall foliage road trips include Great Smoky Mountains in Tennessee for late fall colors down south, Lake Placid and Whiteface Mountain in New York for peak red and gold to the summit, and the Vermont loop - Quechee Gorge, Montpelier, Waterbury, Stowe Gondola, Smugglers Notch VT-108, and Burlington - for early to mid-October peak. All are covered with timing tips, summit drive details, and full itineraries in our fall roundup."
+        "text": "Top fall foliage road trips include Great Smoky Mountains in Tennessee for late fall colors down south, Lake Placid and Whiteface Mountain in New York for peak red and gold to the summit, Vermont loop - Quechee Gorge, Montpelier, Waterbury, Stowe Gondola, Smugglers Notch VT-108, and Burlington - for early to mid-October peak, and Kancamagus Highway (Route 112) in New Hampshire - 34 miles, 2,855 ft at Kancamagus Pass, Lower Falls, Sabbaday Falls, Sugar Hill and Hancock overlooks - best late Sept to mid-Oct. All are covered with timing tips and full itineraries."
       }
     },
     {
@@ -1230,17 +1200,22 @@
         "@type": "Answer",
         "text": "The Vermont Fall Loop from Boston is ~350 miles, 12-14 hours with stops: Boston 6:30 AM to Quechee 9:15 AM to Montpelier 10:40 AM to Waterbury 12:30 PM for Ben and Jerry's to Stowe 1:20 PM to Smugglers Notch 3 PM to Burlington 5:45 PM. Best window is early to mid-October, VT-108 closes mid-late Oct, no RVs, check 511VT."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Kancamagus Highway and how long does it take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kancamagus Highway is NH Route 112, 34.5 miles through White Mountain National Forest from Lincoln to Conway. Boston to Lincoln is ~2h15m, 120 miles. The Kanc itself takes 1h non-stop but 3-5h with stops at Lower Falls, Albany Covered Bridge, Sabbaday Falls (0.8 mi), Sugar Hill Overlook, Hancock Overlook and Kancamagus Pass (2,855 ft). Best fall color late Sept to mid-Oct, no gas or services on the byway."
+      }
     }
   ]
 }
 </script>
 </head>
 <body>
-
 <div class="sky-tint" id="skyTint"></div>
-
 <div class="wrap">
-
   <div class="brand-bar">
     <a class="brand-mark" href="https://ani072018.github.io/Tales-From-My-Suitcase/">
       <span class="brand-mark-text">
@@ -1255,7 +1230,6 @@
       <a href="#newsletter">Newsletter</a>
     </nav>
   </div>
-
   <header class="hero">
     <div class="hero-grid">
       <div>
@@ -1265,28 +1239,25 @@
         <div class="origin"><span class="dot"></span> Scenic routes • Seasonal guides • Real itineraries</div>
       </div>
       <div class="postcards">
-        <span class="postcard-tag">Route 08</span>
+        <span class="postcard-tag">Route 09</span>
         <div class="postcard pc1"><img src="https://picsum.photos/400/500?random=1" alt="Macy's Thanksgiving Day Parade balloon" loading="lazy"></div>
         <div class="postcard pc2"><img src="https://picsum.photos/400/500?random=2" alt="Niagara Falls in winter" loading="lazy"></div>
         <div class="postcard pc3"><img src="https://picsum.photos/400/500?random=3" alt="Great Smoky Mountains in fall" loading="lazy"></div>
       </div>
     </div>
-
     <div class="stats-bar">
-      <div class="stat"><strong>8</strong><span>Trips logged</span></div>
-      <div class="stat"><strong>~4,100</strong><span>Miles driven</span></div>
-      <div class="stat"><strong>11</strong><span>States visited</span></div>
+      <div class="stat"><strong>9</strong><span>Trips logged</span></div>
+      <div class="stat"><strong>~4,380</strong><span>Miles driven</span></div>
+      <div class="stat"><strong>12</strong><span>States visited</span></div>
       <div class="stat"><strong>4</strong><span>Seasons chased</span></div>
     </div>
-
-    <!-- Comparison table - collapsible on mobile -->
     <div class="compare-wrap reveal" id="compareWrap">
       <div class="compare-header">
         <h2>Quick Compare — Find Your Next Drive</h2>
         <div class="compare-header-right">
           <span class="compare-hint">Destination • Best Season • Trip Type • Drive Style</span>
           <button class="compare-toggle" id="compareToggle" aria-expanded="false" aria-controls="compareBody">
-            <span class="toggle-text">Show 8 routes</span>
+            <span class="toggle-text">Show 9 routes</span>
             <span class="toggle-icon" aria-hidden="true">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4.5L6 8.5L10 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
@@ -1362,14 +1333,20 @@
                 <td data-label="Drive Style">Mountain Roads</td>
                 <td><a class="compare-link" href="https://ani072018.github.io/Boston-Vermont-Boston/" target="_blank" rel="noopener">View guide →</a></td>
               </tr>
+              <tr>
+                <td>Kancamagus Highway</td>
+                <td data-label="Best Season"><span class="compare-pill">Fall</span></td>
+                <td data-label="Trip Type">Fall Foliage / Scenic Byway</td>
+                <td data-label="Drive Style">Mountain Byway • 34 mi • No services</td>
+                <td><a class="compare-link" href="https://ani072018.github.io/Boston-Kancamagus-Boston/" target="_blank" rel="noopener">View guide →</a></td>
+              </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
-
     <div class="map-frame">
-      <svg viewBox="0 0 1000 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated map showing routes to Chicago, Niagara Falls, Tennessee, Lake Placid, New York City, Peddler's Village, Hershey Park, Lake Tobias and Vermont Fall Loop">
+      <svg viewBox="0 0 1000 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated map showing routes to Chicago, Niagara Falls, Tennessee, Lake Placid, New York City, Peddler's Village, Hershey Park, Lake Tobias, Vermont and Kancamagus Highway">
         <defs>
           <radialGradient id="fieldGlow" cx="30%" cy="30%" r="80%">
             <stop offset="0%" stop-color="#fbf3e5"/>
@@ -1377,14 +1354,12 @@
           </radialGradient>
         </defs>
         <rect width="1000" height="380" fill="url(#fieldGlow)"/>
-
         <g stroke="#3c2a1e" stroke-opacity="0.06" fill="none">
           <path d="M0 60 Q 300 20 600 70 T 1000 40"/>
           <path d="M0 150 Q 320 110 640 160 T 1000 140"/>
           <path d="M0 260 Q 300 300 620 250 T 1000 280"/>
           <path d="M0 340 Q 340 380 700 330 T 1000 360"/>
         </g>
-
         <path class="route-path" d="M 830 260 C 650 230, 500 150, 300 110" stroke="#c85a2e" stroke-width="2" fill="none" stroke-linecap="round"/>
         <path class="route-path" d="M 830 260 C 800 190, 760 120, 700 70" stroke="#c98a2c" stroke-width="2" fill="none" stroke-linecap="round"/>
         <path class="route-path" d="M 830 260 C 760 300, 680 320, 560 300" stroke="#3f6e64" stroke-width="2" fill="none" stroke-linecap="round"/>
@@ -1395,45 +1370,36 @@
         <path class="route-path" d="M 830 260 C 780 255, 720 240, 660 210" stroke="#e8482c" stroke-width="2" fill="none" stroke-linecap="round"/>
         <path class="route-path" d="M 660 210 C 645 222, 630 232, 615 240" stroke="#e8482c" stroke-width="2" fill="none" stroke-dasharray="2 7" stroke-linecap="round" opacity="0.75"/>
         <path class="route-path" d="M 830 260 C 830 200, 835 140, 825 110" stroke="#2d8a5e" stroke-width="2" fill="none" stroke-linecap="round"/>
-
+        <path class="route-path" d="M 830 260 C 835 200, 842 155, 845 135" stroke="#d95a1a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
         <circle cx="830" cy="260" r="6" fill="#3c2a1e"/>
         <circle class="pin-pulse" cx="830" cy="260" r="6" fill="none" stroke="#3c2a1e" stroke-width="1.5"/>
         <text x="845" y="264" fill="#3c2a1e" font-family="Source Sans 3" font-size="13" font-weight="600">Start</text>
-
         <circle cx="300" cy="110" r="5.5" fill="#c85a2e"/>
         <text x="270" y="95" fill="#3c2a1e" font-family="Source Sans 3" font-size="12.5" text-anchor="middle">Chicago</text>
-
         <circle cx="700" cy="70" r="5.5" fill="#c98a2c"/>
         <text x="700" y="52" fill="#3c2a1e" font-family="Source Sans 3" font-size="12.5" text-anchor="middle">Niagara</text>
-
         <circle cx="560" cy="300" r="5.5" fill="#3f6e64"/>
         <text x="560" y="325" fill="#3c2a1e" font-family="Source Sans 3" font-size="12.5" text-anchor="middle">Tennessee</text>
-
         <circle cx="760" cy="90" r="5.5" fill="#8a3fa8"/>
         <text x="760" y="72" fill="#3c2a1e" font-family="Source Sans 3" font-size="12.5" text-anchor="middle">Lake Placid</text>
-
         <circle cx="790" cy="195" r="5.5" fill="#a8324a"/>
         <text x="790" y="212" fill="#3c2a1e" font-family="Source Sans 3" font-size="12.5" text-anchor="middle">New York</text>
-
         <circle cx="705" cy="175" r="5.5" fill="#c9972e"/>
         <text x="705" y="160" fill="#3c2a1e" font-family="Source Sans 3" font-size="12.5" text-anchor="middle">Peddler's Village</text>
-
         <circle cx="660" cy="210" r="5.5" fill="#e8482c"/>
         <text x="660" y="228" fill="#3c2a1e" font-family="Source Sans 3" font-size="12.5" text-anchor="middle">Hershey</text>
-
         <circle cx="615" cy="240" r="5" fill="#4c7a3d"/>
         <text x="600" y="258" fill="#3c2a1e" font-family="Source Sans 3" font-size="11.5" text-anchor="middle">Lake Tobias</text>
-
         <circle cx="825" cy="110" r="5.5" fill="#2d8a5e"/>
         <text x="825" y="92" fill="#3c2a1e" font-family="Source Sans 3" font-size="12.5" text-anchor="middle">Vermont</text>
+        <circle cx="845" cy="135" r="6" fill="#d95a1a" stroke="#fff" stroke-width="1.5"/>
+        <text x="845" y="118" fill="#3c2a1e" font-family="Source Sans 3" font-size="12.5" font-weight="700" text-anchor="middle">Kancamagus</text>
       </svg>
     </div>
   </header>
-
   <section class="routes">
     <p class="section-label">Trips logged</p>
     <div class="cards">
-
       <a class="card reveal" data-accent="chicago" href="https://ani072018.github.io/Boston-Chicago-Boston/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 01</span>
@@ -1447,7 +1413,6 @@
           </span>
         </div>
       </a>
-
       <a class="card reveal" data-accent="niagara" href="https://ani072018.github.io/Boston-Niagra-Boston/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 02</span>
@@ -1461,7 +1426,6 @@
           </span>
         </div>
       </a>
-
       <a class="card reveal" data-accent="tennessee" href="https://ani072018.github.io/Boston-Tennessee-Boston/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 03</span>
@@ -1475,7 +1439,6 @@
           </span>
         </div>
       </a>
-
       <a class="card reveal" data-accent="laceplacid" href="https://ani072018.github.io/Boston-LakePlacid-Boston/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 04</span>
@@ -1489,7 +1452,6 @@
           </span>
         </div>
       </a>
-
       <a class="card reveal" data-accent="nyc" href="https://ani072018.github.io/Boston-Macys-Parade/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 05</span>
@@ -1503,7 +1465,6 @@
           </span>
         </div>
       </a>
-
       <a class="card reveal" data-accent="peddlersvillage" href="https://ani072018.github.io/Newyork-Peddlers-Village-Boston/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 06</span>
@@ -1517,7 +1478,6 @@
           </span>
         </div>
       </a>
-
       <a class="card reveal" data-accent="hershey" href="https://ani072018.github.io/Boston-Hershey-Boston/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 07</span>
@@ -1531,7 +1491,6 @@
           </span>
         </div>
       </a>
-
       <a class="card reveal" data-accent="vermont" href="https://ani072018.github.io/Boston-Vermont-Boston/" target="_blank" rel="noopener">
         <div class="card-art">
           <span class="card-mile-badge">Route 08</span>
@@ -1545,20 +1504,38 @@
           </span>
         </div>
       </a>
-
+      <a class="card reveal" data-accent="kancamagus" href="https://ani072018.github.io/Boston-Kancamagus-Boston/" target="_blank" rel="noopener">
+        <div class="card-art">
+          <span class="card-mile-badge">Route 09 • NEW</span>
+          <img src="https://picsum.photos/640/420?random=19" alt="Kancamagus Highway fall foliage - White Mountains scenic byway, Lower Falls and Sabbaday Falls" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-title">Kancamagus Highway — New Hampshire's Fall Crown</span>
+          <span class="card-date">Fall 2025 · 34 miles of pure foliage • Boston loop</span>
+          <span class="card-cta">Visit site
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
       <div class="card soon">
         <div class="card-body">
           <span class="card-title">Next route</span>
           <span class="card-date">Coming soon · still on the map</span>
         </div>
       </div>
-
     </div>
   </section>
-
   <section class="latest reveal" id="latest-from-the-road">
     <p class="section-label">Latest from the road</p>
     <div class="latest-list">
+      <a class="latest-item" href="https://ani072018.github.io/Boston-Kancamagus-Boston/" target="_blank" rel="noopener">
+        <span class="latest-tag">Route 09 · NEW • Oct 2025</span>
+        <span class="latest-body">
+          <h3>Kancamagus Highway: 34 miles of uninterrupted White Mountain fall</h3>
+          <p>Boston → Lincoln → Kancamagus Pass (2,855 ft) → Conway → Boston — 280-mile loop. Lower Falls, Albany Covered Bridge, Sabbaday Falls 0.8 mi, Sugar Hill & Hancock overlooks, no gas on the byway. Late Sept to mid-Oct peak, 3-5 hrs with stops.</p>
+        </span>
+        <span class="latest-read">Read the trip →</span>
+      </a>
       <a class="latest-item" href="https://ani072018.github.io/Boston-Vermont-Boston/" target="_blank" rel="noopener">
         <span class="latest-tag">Route 08 · Oct 2025</span>
         <span class="latest-body">
@@ -1593,7 +1570,6 @@
       </a>
     </div>
   </section>
-
   <section class="roundup reveal" id="roundup">
     <p class="section-label">Road trip guides by season</p>
     <div class="roundup-grid">
@@ -1603,6 +1579,7 @@
           <li><a href="https://ani072018.github.io/Boston-Tennessee-Boston/" target="_blank" rel="noopener">Great Smoky Mountains, TN</a></li>
           <li><a href="https://ani072018.github.io/Boston-LakePlacid-Boston/" target="_blank" rel="noopener">Lake Placid & Whiteface Mountain, NY</a></li>
           <li><a href="https://ani072018.github.io/Boston-Vermont-Boston/" target="_blank" rel="noopener">Vermont Fall Loop — Quechee to Burlington</a></li>
+          <li><a href="https://ani072018.github.io/Boston-Kancamagus-Boston/" target="_blank" rel="noopener">Kancamagus Highway, NH — 34 mi byway</a></li>
         </ul>
       </div>
       <div class="roundup-card">
@@ -1620,8 +1597,9 @@
         </ul>
       </div>
       <div class="roundup-card">
-        <h3>Best long-weekend road trips</h3>
+        <h3>Best long-weekend & day trips from Boston</h3>
         <ul>
+          <li><a href="https://ani072018.github.io/Boston-Kancamagus-Boston/" target="_blank" rel="noopener">Kancamagus Highway, NH — ~280 mi loop</a></li>
           <li><a href="https://ani072018.github.io/Boston-Vermont-Boston/" target="_blank" rel="noopener">Vermont Fall Loop, VT — 350 miles</a></li>
           <li><a href="https://ani072018.github.io/Boston-Macys-Parade/" target="_blank" rel="noopener">Macy's Thanksgiving Parade, NYC</a></li>
           <li><a href="https://ani072018.github.io/Newyork-Peddlers-Village-Boston/" target="_blank" rel="noopener">NYC & Peddler's Village, PA</a></li>
@@ -1629,8 +1607,6 @@
       </div>
     </div>
   </section>
-
-  <!-- FAQ block - attractive collapsible, questions always visible -->
   <section class="faq reveal" id="faq">
     <p class="section-label">Road trip FAQ — quick answers</p>
     <h2>Planning help for your next drive</h2>
@@ -1645,11 +1621,10 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p><span class="faq-badge">🏞 Scenic • 8 routes</span><br>Best scenic road trips include Chicago Skyline Run for long-distance city driving, Great Smoky Mountains and Lake Placid for fall foliage, Vermont Fall Loop for covered bridges and Smugglers' Notch, Niagara Falls for winter waterfall views, Peddler's Village for holiday lights, Macy's Thanksgiving Parade for events, and Hersheypark and Lake Tobias for family theme park adventures. Each guide includes best season, drive style, and full itinerary with stops.</p>
+            <p><span class="faq-badge">🏞 Scenic • 9 routes</span><br>Best scenic road trips include Chicago Skyline Run for long-distance city driving, Great Smoky Mountains and Lake Placid for fall foliage, Vermont Fall Loop for covered bridges and Smugglers' Notch, Kancamagus Highway for 34 miles of uninterrupted White Mountain color, Niagara Falls for winter waterfall views, Peddler's Village for holiday lights, Macy's Thanksgiving Parade for events, and Hersheypark and Lake Tobias for family theme park adventures. Each guide includes best season, drive style, and full itinerary with stops.</p>
           </div>
         </div>
       </div>
-
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
           <span class="faq-question-text">What are the best fall foliage road trips?</span>
@@ -1659,11 +1634,10 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p><span class="faq-badge">🍂 Fall • Peak colors</span><br>Top fall foliage road trips are Great Smoky Mountains for late fall colors down south, Lake Placid & Whiteface Mountain for peak red and gold to the summit, and Vermont — Quechee Gorge, Montpelier, Waterbury (Ben & Jerry's), Stowe Gondola, Smugglers' Notch VT-108, and Burlington — for early to mid-October peak. All guides include exact timing windows, summit drive details, and where to stop for best views.</p>
+            <p><span class="faq-badge">🍂 Fall • Peak colors</span><br>Top fall foliage road trips are Great Smoky Mountains for late fall colors down south, Lake Placid & Whiteface Mountain for peak red and gold to the summit, Vermont — Quechee Gorge, Montpelier, Waterbury (Ben & Jerry's), Stowe Gondola, Smugglers' Notch VT-108, and Burlington — for early to mid-October peak, and Kancamagus Highway (NH 112) for 34 miles of pure White Mountain foliage. All guides include exact timing windows, summit drive details, and where to stop for best views.</p>
           </div>
         </div>
       </div>
-
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
           <span class="faq-question-text">What are the best family road trips with theme parks?</span>
@@ -1677,7 +1651,6 @@
           </div>
         </div>
       </div>
-
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
           <span class="faq-question-text">What is the best winter road trip for frozen waterfalls?</span>
@@ -1691,7 +1664,6 @@
           </div>
         </div>
       </div>
-
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
           <span class="faq-question-text">What is the best fall road trip in Vermont?</span>
@@ -1705,9 +1677,21 @@
           </div>
         </div>
       </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">What is Kancamagus Highway and how long does it take?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5V12.5M1.5 7H12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p><span class="faq-badge">🍁 Kancamagus • 280 mi loop • 34 mi byway</span><br>Kancamagus Highway is NH Route 112, 34.5 miles through White Mountain National Forest from Lincoln to Conway, elevation 2,855 ft at Kancamagus Pass. Boston to Lincoln is ~2h15m. The Kanc itself is 1h non-stop but plan 3-5h with stops: Lower Falls (swimming), Albany Covered Bridge, Sabbaday Falls 0.8 mi round-trip, Sugar Hill Overlook, Hancock Overlook, CL Graham Wangan Overlook. No gas, no food, no cell service on the byway — fill in Lincoln or Conway. Best fall color late Sept to mid-Oct. Parking $5 day pass at most stops.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-
   <section class="about" id="about">
     <div class="about-avatar"><span>AM</span></div>
     <div class="about-copy">
@@ -1717,7 +1701,6 @@
       <p class="about-signoff">— join me as I explore the world one adventure at a time, one suitcase at a time</p>
     </div>
   </section>
-
   <section class="newsletter" id="newsletter">
     <div class="newsletter-copy">
       <p class="section-label">Stay on the road</p>
@@ -1740,7 +1723,6 @@
       </div>
     </div>
   </section>
-
   <footer>
     <div>
       <p class="signature" style="margin:0 0 6px 0;">Tales From My Suitcase — safe travels, one suitcase at a time</p>
@@ -1755,17 +1737,14 @@
       <a href="https://ani072018.github.io/Newyork-Peddlers-Village-Boston/" style="color:var(--ink-soft); font-size:13px; text-decoration:none; border-bottom:1px solid var(--line);">Peddler's Village</a>
       <a href="https://ani072018.github.io/Boston-Hershey-Boston/" style="color:var(--ink-soft); font-size:13px; text-decoration:none; border-bottom:1px solid var(--line);">Hershey Park</a>
       <a href="https://ani072018.github.io/Boston-Vermont-Boston/" style="color:var(--ink-soft); font-size:13px; text-decoration:none; border-bottom:1px solid var(--line);">Vermont</a>
+      <a href="https://ani072018.github.io/Boston-Kancamagus-Boston/" style="color:var(--ink-soft); font-size:13px; text-decoration:none; border-bottom:1px solid var(--line); font-weight:700; color:var(--rust-2);">Kancamagus • NEW</a>
     </div>
   </footer>
-
 </div>
-
 <div class="corner-logo">
   <img src="images/Branding.png" alt="Tales From My Suitcase logo">
 </div>
-
 <script>
-  // ---- Time-of-day theme engine ----
   const stops = [
     [0,  {paper:'#211d29', paper2:'#2a2434', ink:'#f0ece0', inkSoft:'#b6ada0', line:'rgba(240,236,224,0.14)', cardBg:'#2c2636', sky:'rgba(40,30,70,0.25)'}],
     [5,  {paper:'#2a2436', paper2:'#372c3c', ink:'#f0ece0', inkSoft:'#bcb2a6', line:'rgba(240,236,224,0.14)', cardBg:'#362d40', sky:'rgba(90,60,90,0.20)'}],
@@ -1776,7 +1755,6 @@
     [20, {paper:'#39304a', paper2:'#4a3d5c', ink:'#f2ede2', inkSoft:'#c2b8ab', line:'rgba(242,237,226,0.14)', cardBg:'#463a58', sky:'rgba(120,70,120,0.22)'}],
     [24, {paper:'#211d29', paper2:'#2a2434', ink:'#f0ece0', inkSoft:'#b6ada0', line:'rgba(240,236,224,0.14)', cardBg:'#2c2636', sky:'rgba(40,30,70,0.25)'}],
   ];
-
   function hexToRgb(hex){
     const h = hex.replace('#','');
     return [parseInt(h.substring(0,2),16), parseInt(h.substring(2,4),16), parseInt(h.substring(4,6),16)];
@@ -1789,11 +1767,9 @@
     const b = Math.round(lerp(c1[2], c2[2], t));
     return `rgb(${r}, ${g}, ${b})`;
   }
-
   function applyTimeTheme(){
     const now = new Date();
     const hourFloat = now.getHours() + now.getMinutes()/60;
-
     let lower = stops[0], upper = stops[stops.length-1];
     for(let i=0;i<stops.length-1;i++){
       if(hourFloat >= stops[i][0] && hourFloat <= stops[i+1][0]){
@@ -1802,13 +1778,10 @@
     }
     const span = upper[0] - lower[0];
     const rawT = span === 0 ? 0 : (hourFloat - lower[0]) / span;
-
     const aIsDark = hexToRgb(lower[1].ink).reduce((s,v)=>s+v,0) > 400;
     const bIsDark = hexToRgb(upper[1].ink).reduce((s,v)=>s+v,0) > 400;
     const t = aIsDark === bIsDark ? rawT : (rawT < 0.5 ? 0 : 1);
-
     const a = lower[1], b = upper[1];
-
     const root = document.documentElement.style;
     root.setProperty('--paper', mixHex(a.paper, b.paper, t));
     root.setProperty('--paper-2', mixHex(a.paper2, b.paper2, t));
@@ -1816,20 +1789,16 @@
     root.setProperty('--ink-soft', mixHex(a.inkSoft, b.inkSoft, t));
     root.setProperty('--card-bg', mixHex(a.cardBg, b.cardBg, t));
     root.setProperty('--line', t < 0.5 ? a.line : b.line);
-
     const skyEl = document.getElementById('skyTint');
     if(skyEl){
       skyEl.style.background = t < 0.5 ? a.sky : b.sky;
       skyEl.style.opacity = '1';
     }
   }
-
   applyTimeTheme();
   setInterval(applyTimeTheme, 60000);
 </script>
-
 <script>
-  // ---- Scroll reveal ----
   const revealEls = document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){
     const io = new IntersectionObserver((entries)=>{
@@ -1841,8 +1810,6 @@
   } else {
     revealEls.forEach(el=>el.classList.add('visible'));
   }
-
-  // ---- FAQ accordion - attractive collapsible, questions always visible ----
   const faqItems = document.querySelectorAll('.faq-item');
   document.querySelectorAll('.faq-question').forEach(btn=>{
     btn.addEventListener('click', ()=>{
@@ -1858,53 +1825,43 @@
       }
     });
   });
-
-  // ---- Comparison table - collapsible on mobile ----
   const compareWrap = document.getElementById('compareWrap');
   const compareToggle = document.getElementById('compareToggle');
   const compareBody = document.getElementById('compareBody');
-  
   function isMobile(){ return window.innerWidth <= 720; }
-
   function setMobileState(){
     if(isMobile()){
       if(!compareWrap.classList.contains('mobile-open')){
         compareToggle.setAttribute('aria-expanded','false');
-        compareToggle.querySelector('.toggle-text').textContent = 'Show 8 routes';
+        compareToggle.querySelector('.toggle-text').textContent = 'Show 9 routes';
       }
     } else {
       compareWrap.classList.add('mobile-open');
       compareToggle.setAttribute('aria-expanded','true');
-      compareToggle.querySelector('.toggle-text').textContent = '8 routes';
+      compareToggle.querySelector('.toggle-text').textContent = '9 routes';
     }
   }
-
-  // init
   setMobileState();
   if(isMobile()){
-    // start collapsed on mobile
     compareWrap.classList.remove('mobile-open');
   } else {
     compareWrap.classList.add('mobile-open');
   }
-
   compareToggle.addEventListener('click', ()=>{
     const isOpen = compareWrap.classList.contains('mobile-open');
     if(isOpen){
       compareWrap.classList.remove('mobile-open');
       compareToggle.setAttribute('aria-expanded','false');
-      compareToggle.querySelector('.toggle-text').textContent = 'Show 8 routes';
+      compareToggle.querySelector('.toggle-text').textContent = 'Show 9 routes';
     } else {
       compareWrap.classList.add('mobile-open');
       compareToggle.setAttribute('aria-expanded','true');
       compareToggle.querySelector('.toggle-text').textContent = 'Hide routes';
-      // scroll to table on mobile for better UX
       if(isMobile()){
         compareWrap.scrollIntoView({behavior:'smooth', block:'start'});
       }
     }
   });
-
   window.addEventListener('resize', ()=>{
     setMobileState();
     if(!isMobile()){
@@ -1912,6 +1869,5 @@
     }
   });
 </script>
-
 </body>
 </html>
