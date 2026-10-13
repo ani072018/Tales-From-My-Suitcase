@@ -199,6 +199,7 @@
   .postcard.pc1{ top:0; left:4%; width:58%; aspect-ratio:4/5; transform:rotate(-6deg); z-index:2; }
   .postcard.pc2{ top:26%; left:38%; width:54%; aspect-ratio:4/5; transform:rotate(5deg); z-index:3; }
   .postcard.pc3{ top:58%; left:10%; width:50%; aspect-ratio:4/5; transform:rotate(-3deg); z-index:1; }
+  .postcard.pc4{ top:38%; left:52%; width:48%; aspect-ratio:4/5; transform:rotate(7deg); z-index:4; }
   .postcard-tag{
     position:absolute;
     bottom:64%;
@@ -477,6 +478,7 @@
   .card[data-accent="vermont"]{ --accent: #2d8a5e; }
   .card[data-accent="kancamagus"]{ --accent: #d95a1a; }
   .card[data-accent="plymouth"]{ --accent: #1a8a7a; }
+  .card[data-accent="gloucester"]{ --accent: #0e4d5c; }
   .card:hover, .card:focus-visible{
     transform:translateY(-6px);
     border-color:rgba(200,90,46,0.35);
@@ -1021,8 +1023,21 @@
         { "@id": "https://ani072018.github.io/Boston-Hershey-Boston/#trip" },
         { "@id": "https://ani072018.github.io/Boston-Vermont-Boston/#trip" },
         { "@id": "https://ani072018.github.io/Boston-Kancamagus-Boston/#trip" },
-        { "@id": "https://ani072018.github.io/Boston-Plymouth-Hyannis-Boston/#trip" }
+        { "@id": "https://ani072018.github.io/Boston-Plymouth-Hyannis-Boston/#trip" },
+        { "@id": "https://ani072018.github.io/boston-to-gloucester-whale-watch-road-trip/#trip" }
       ]
+    }    ,
+    {
+      "@type": ["BlogPosting", "TouristTrip"],
+      "@id": "https://ani072018.github.io/boston-to-gloucester-whale-watch-road-trip/#trip",
+      "headline": "Boston to Gloucester — A Whale Watch Road Trip — Humpbacks, Dolphins and a Boatload of Laughs",
+      "name": "Boston to Gloucester Whale Watch Road Trip",
+      "url": "https://ani072018.github.io/boston-to-gloucester-whale-watch-road-trip/",
+      "mainEntityOfPage": "https://ani072018.github.io/boston-to-gloucester-whale-watch-road-trip/",
+      "datePublished": "2026-10-10",
+      "author": { "@id": "https://ani072018.github.io/Tales-From-My-Suitcase/#author" },
+      "touristType": "Whale watching coastal day trip",
+      "description": "35-mile day trip from Boston to Gloucester Harbor and Stellwagen Bank — humpback whales, dolphins, sea birds, Grant Circle rotary, and chowder on the waterfront."
     },
     {
       "@type": "BreadcrumbList",
@@ -1270,15 +1285,17 @@
         <div class="origin"><span class="dot"></span> Scenic routes • Seasonal guides • Real itineraries</div>
       </div>
       <div class="postcards">
-        <span class="postcard-tag">Route 10</span>
+        <span class="postcard-tag" style="background:#0e4d5c">Route 11 • NEW</span>
+        <div class="postcard pc4"><img src="https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=400&h=500&fit=crop&q=80" alt="Boston to Gloucester whale watch - humpback tail" loading="lazy"></div>
+        <span class="postcard-tag" style="top:70%;right:auto;left:2%;background:var(--ink)">Route 10</span>
         <div class="postcard pc1"><img src="https://picsum.photos/400/500?random=1" alt="Macy's Thanksgiving Day Parade balloon" loading="lazy"></div>
         <div class="postcard pc2"><img src="https://picsum.photos/400/500?random=2" alt="Niagara Falls in winter" loading="lazy"></div>
         <div class="postcard pc3"><img src="https://picsum.photos/400/500?random=3" alt="Plymouth Rock and Hyannis harbor sunset" loading="lazy"></div>
       </div>
     </div>
     <div class="stats-bar">
-      <div class="stat"><strong>10</strong><span>Trips logged</span></div>
-      <div class="stat"><strong>~4,560</strong><span>Miles driven</span></div>
+      <div class="stat"><strong>11</strong><span>Trips logged</span></div>
+      <div class="stat"><strong>~4,595</strong><span>Miles driven</span></div>
       <div class="stat"><strong>12</strong><span>States visited</span></div>
       <div class="stat"><strong>4</strong><span>Seasons chased</span></div>
     </div>
@@ -1288,7 +1305,7 @@
         <div class="compare-header-right">
           <span class="compare-hint">Destination • Best Season • Trip Type • Drive Style</span>
           <button class="compare-toggle" id="compareToggle" aria-expanded="false" aria-controls="compareBody">
-            <span class="toggle-text">Show 10 routes</span>
+            <span class="toggle-text">Show 11 routes</span>
             <span class="toggle-icon" aria-hidden="true">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4.5L6 8.5L10 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
@@ -1378,6 +1395,13 @@
                 <td data-label="Drive Style">Coastal Highway • ~180 mi loop</td>
                 <td><a class="compare-link" href="https://ani072018.github.io/Boston-Plymouth-Hyannis-Boston/" target="_blank" rel="noopener">View guide →</a></td>
               </tr>
+              <tr>
+                <td>Boston to Gloucester — Whale Watch</td>
+                <td data-label="Best Season"><span class="compare-pill">Fall</span></td>
+                <td data-label="Trip Type">Whale Watch / Coastal • Day Trip</td>
+                <td data-label="Drive Style">Coastal Highway • 35 mi • Stellwagen Bank</td>
+                <td><a class="compare-link" href="https://ani072018.github.io/boston-to-gloucester-whale-watch-road-trip/" target="_blank" rel="noopener">View guide →</a></td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -1409,6 +1433,8 @@
         <path class="route-path" d="M 660 210 C 645 222, 630 232, 615 240" stroke="#e8482c" stroke-width="2" fill="none" stroke-dasharray="2 7" stroke-linecap="round" opacity="0.75"/>
         <path class="route-path" d="M 830 260 C 830 200, 835 140, 825 110" stroke="#2d8a5e" stroke-width="2" fill="none" stroke-linecap="round"/>
         <path class="route-path" d="M 830 260 C 835 200, 842 155, 845 135" stroke="#d95a1a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <!-- NEW Gloucester Whale Watch 35 mi -->
+        <path class="route-path" d="M 830 260 C 860 245, 885 235, 895 230" stroke="#0e4d5c" stroke-width="2.4" fill="none" stroke-linecap="round"/>
         <!-- NEW Plymouth to Hyannis short coastal loop -->
         <path class="route-path" d="M 830 260 C 880 260, 910 250, 915 285" stroke="#1a8a7a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
         <path class="route-path" d="M 915 285 C 900 300, 860 310, 830 260" stroke="#1a8a7a" stroke-width="2" fill="none" stroke-dasharray="3 6" stroke-linecap="round" opacity="0.8"/>
@@ -1438,6 +1464,8 @@
         <circle cx="880" cy="258" r="5.5" fill="#1a8a7a" stroke="#fff" stroke-width="1.2"/>
         <text x="880" y="242" fill="#3c2a1e" font-family="Source Sans 3" font-size="11.5" font-weight="700" text-anchor="middle">Plymouth</text>
         <circle cx="915" cy="285" r="5.5" fill="#1a8a7a"/>
+        <circle cx="895" cy="230" r="5.5" fill="#0e4d5c" stroke="#fff" stroke-width="1.2"/>
+        <text x="895" y="214" fill="#3c2a1e" font-family="Source Sans 3" font-size="11.5" font-weight="700" text-anchor="middle">Gloucester</text>
         <text x="915" y="310" fill="#3c2a1e" font-family="Source Sans 3" font-size="11.5" font-weight="700" text-anchor="middle">Hyannis</text>
       </svg>
     </div>
@@ -1575,6 +1603,20 @@
           </span>
         </div>
       </a>
+            <a class="card reveal" data-accent="gloucester" href="https://ani072018.github.io/boston-to-gloucester-whale-watch-road-trip/" target="_blank" rel="noopener">
+        <div class="card-art">
+          <span class="card-mile-badge">Route 11 • NEW</span>
+          <img src="https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=640&h=420&fit=crop&q=80" alt="Boston to Gloucester whale watch - humpback, dolphins, boatload of laughs" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-title">Boston to Gloucester — Whale Watch Road Trip</span>
+          <span class="card-date">Oct 2026 · Humpbacks, dolphins & a boatload of laughs • 35 mi • Stellwagen Bank</span>
+          <span class="card-cta">Visit site
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+
       <div class="card soon">
         <div class="card-body">
           <span class="card-title">Next route</span>
@@ -1586,6 +1628,15 @@
   <section class="latest reveal" id="latest-from-the-road">
     <p class="section-label">Latest from the road</p>
     <div class="latest-list">
+      <a class="latest-item" href="https://ani072018.github.io/boston-to-gloucester-whale-watch-road-trip/" target="_blank" rel="noopener">
+        <span class="latest-tag">Route 11 · NEW • Oct 2026 • 35 mi</span>
+        <span class="latest-body">
+          <h3>Boston to Gloucester: A Whale Watch Road Trip — 35 miles, a rotary, and a humpback tail</h3>
+          <p>Boston → Route 128 → Grant Circle rotary → Gloucester Harbor (working harbor since 1623) → Stellwagen Bank. Humpback breath, fluke rising, dolphins racing the bow, gannets diving like arrows, and chowder on the waterfront. Best fall, layers & Dramamine required.</p>
+        </span>
+        <span class="latest-read">Read the trip →</span>
+      </a>
+
       <a class="latest-item" href="https://ani072018.github.io/Boston-Plymouth-Hyannis-Boston/" target="_blank" rel="noopener">
         <span class="latest-tag">Route 10 · NEW • May 2026</span>
         <span class="latest-body">
@@ -1665,6 +1716,7 @@
       <div class="roundup-card">
         <h3>Best long-weekend & day trips from Boston</h3>
         <ul>
+          <li><a href="https://ani072018.github.io/boston-to-gloucester-whale-watch-road-trip/" target="_blank" rel="noopener" style="font-weight:700; color:var(--rust-2);">Boston to Gloucester Whale Watch, MA — 35 mi • NEW</a></li>
           <li><a href="https://ani072018.github.io/Boston-Plymouth-Hyannis-Boston/" target="_blank" rel="noopener" style="font-weight:700; color:var(--rust-2);">Plymouth to Hyannis, MA — ~180 mi • NEW</a></li>
           <li><a href="https://ani072018.github.io/Boston-Kancamagus-Boston/" target="_blank" rel="noopener">Kancamagus Highway, NH — ~280 mi loop</a></li>
           <li><a href="https://ani072018.github.io/Boston-Vermont-Boston/" target="_blank" rel="noopener">Vermont Fall Loop, VT — 350 miles</a></li>
@@ -1688,7 +1740,7 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p><span class="faq-badge">🏞 Scenic • 10 routes</span><br>Best scenic road trips include Chicago Skyline Run for long-distance city driving, Great Smoky Mountains and Lake Placid for fall foliage, Vermont Fall Loop for covered bridges and Smugglers' Notch, Kancamagus Highway for 34 miles of uninterrupted White Mountain color, Plymouth to Hyannis for Pilgrims to Kennedys coastal history, Niagara Falls for winter waterfall views, Peddler's Village for holiday lights, Macy's Thanksgiving Parade for events, and Hersheypark and Lake Tobias for family theme park adventures. Each guide includes best season, drive style, and full itinerary with stops.</p>
+            <p><span class="faq-badge">🏞 Scenic • 11 routes</span><br>Best scenic road trips include Chicago Skyline Run for long-distance city driving, Great Smoky Mountains and Lake Placid for fall foliage, Vermont Fall Loop for covered bridges and Smugglers' Notch, Kancamagus Highway for 34 miles of uninterrupted White Mountain color, Plymouth to Hyannis for Pilgrims to Kennedys coastal history, Niagara Falls for winter waterfall views, Peddler's Village for holiday lights, Macy's Thanksgiving Parade for events, and Hersheypark and Lake Tobias for family theme park adventures. Each guide includes best season, drive style, and full itinerary with stops.</p>
           </div>
         </div>
       </div>
@@ -1770,6 +1822,21 @@
           </div>
         </div>
       </div>
+    </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">What is the best whale watch day trip from Boston?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5V12.5M1.5 7H12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p><span class="faq-badge">🐋 Whale Watch • 35 mi • NEW</span><br>Boston to Gloucester is the best whale watch day trip — 35 miles, ~1 hour drive via Route 128, Grant Circle rotary, Gloucester Harbor working harbor since 1623, then 4 hours on Stellwagen Bank Sanctuary. Humpbacks, dolphins, gannets diving, and chowder back on shore. Best fall, bring layers and Dramamine. Cape Ann Whale Watch boats run from Gloucester Harbor.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
   <section class="about" id="about">
@@ -1914,7 +1981,7 @@
     if(isMobile()){
       if(!compareWrap.classList.contains('mobile-open')){
         compareToggle.setAttribute('aria-expanded','false');
-        compareToggle.querySelector('.toggle-text').textContent = 'Show 10 routes';
+        compareToggle.querySelector('.toggle-text').textContent = 'Show 11 routes';
       }
     } else {
       compareWrap.classList.add('mobile-open');
@@ -1933,7 +2000,7 @@
     if(isOpen){
       compareWrap.classList.remove('mobile-open');
       compareToggle.setAttribute('aria-expanded','false');
-      compareToggle.querySelector('.toggle-text').textContent = 'Show 10 routes';
+      compareToggle.querySelector('.toggle-text').textContent = 'Show 11 routes';
     } else {
       compareWrap.classList.add('mobile-open');
       compareToggle.setAttribute('aria-expanded','true');
