@@ -10,6 +10,6 @@ Tales From My Suitcase is a participant in affiliate programs including Stay22, 
 
 When you click a link and make a booking/purchase, I may earn a commission at no extra cost to you. I only recommend places and tours I would use for my own Boston road trips.
 
-For questions: [your email]
+For questions: ani310.mitra@gmail.com
 
 *This site is hosted on GitHub Pages. Content is created first, affiliate links second, to comply with GitHub Pages terms.*
